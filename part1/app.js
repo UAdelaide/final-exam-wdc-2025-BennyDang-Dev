@@ -101,6 +101,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
         // ------------------------------------------
         // ! Inserting Records
+        // ? These 
         // ------------------------------------------
         let rows = [];
 
@@ -128,6 +129,8 @@ app.use(express.static(path.join(__dirname, 'public')));
                     ( (SELECT user_id FROM Users WHERE Users.username = 'alice123' LIMIT 1), 'Fluke', 'large' );
             `);
         }
+
+
 
 
     }catch(error){
