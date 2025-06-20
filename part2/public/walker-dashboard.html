@@ -54,8 +54,7 @@
           try{
             const res = await fetch('/api/users/me');
             const result = res.json;
-            if(!res.ok) throw new Error('Failed to get walker id!');
-
+            if(!res.ok) throw new Error(result.error);
             user = result.userid;
           }catch(err){
             error.value = err.message;
