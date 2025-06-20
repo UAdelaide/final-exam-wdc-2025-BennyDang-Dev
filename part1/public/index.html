@@ -13,6 +13,9 @@
                     imageURL: ""
                 }
             },
+            beforeMount(){
+                
+            },
             method: {
                 async getDogImage(){
                     const res = await fetch('https://dog.ceo/api/breeds/image/random');
@@ -20,7 +23,7 @@
                     if(result.status === "success"){
                         this.imageURL = result.message;
                     }else{
-
+                        this.getDogImage();
                     }
                 }
             }
