@@ -15,11 +15,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+let db;
 
 // * Connect to mysql te
 (async () => {
     try {
-        const db = await mysql.createConnection({
+        db = await mysql.createConnection({
             host: 'localhost',
             user: 'root',
             password: '',
