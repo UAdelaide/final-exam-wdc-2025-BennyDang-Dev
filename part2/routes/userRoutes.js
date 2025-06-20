@@ -46,18 +46,17 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.get('logout',(req,res) => {
+router.get('/logout',(req,res) => {
   try{
     req.session.destroy();
+    console.log(req.session.user_id);
+    res.redirect();
   }catch(error){
     // * Do nothing if it cant logout
     // * For some reasons
     res.sendStatus(500);
   }
-
-  console.log(req.session.user_id);
-  res.redirect()
-})
+});
 
 // POST a new user (simple signup)
 router.post('/register', async (req, res) => {
