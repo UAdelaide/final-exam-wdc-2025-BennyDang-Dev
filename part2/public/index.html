@@ -31,7 +31,7 @@
    <br><br>
    <!-- * Display error: Invalid Credential / Login Error -->
    <div class="alert alert-danger" v-if="invalid">
-    {{ error }}
+    {{ loginError }}
    </div>
    <!-- * Q17 -->
     <!-- * /api/dogs + dogs.ceo API, if we use /api/dogs as is -->
@@ -75,7 +75,8 @@
           password: "",
           invalid: false,
           loginError: "",
-          gotData:
+          gotData: false,
+          
         };
       },
       methods: {
