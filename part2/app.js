@@ -39,10 +39,7 @@ app.get("/owner-dashboard.html",(req,res, next) => {
     if(authenticated){
        if(role === "owner"){
         next();
-       }else{
-        res.redirect(301,"/index.html");
        }
-    }else{
         res.redirect(301,"/index.html");
     }
 });
