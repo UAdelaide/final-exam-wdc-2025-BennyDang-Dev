@@ -25,6 +25,7 @@ let db;
             user: 'root',
             password: ''
         });
+        // * Start with a fresh database of dogwalks
         await connection.query();
 
 
