@@ -47,4 +47,6 @@ SELECT U.username AS walker_username, COUNT(WRT.rating_id) AS total_ratings, ROU
 FROM WalkRatings WRT
 INNER JOIN Users U ON WRT.walker_id = U.user_id
 INNER JOIN WalkRequests WR ON WRT.request_id = WR.request_id
-GROUP BY WRT.walker_id
+GROUP BY WRT.walker_id;
+
+FROM
