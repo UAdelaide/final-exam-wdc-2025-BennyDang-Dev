@@ -23,11 +23,9 @@ let db;
         const connection = await mysql.createConnection({
             host: 'localhost',
             user: 'root',
-            password: ''
+            password: '',
+            database: ''
         });
-        // * Start with a fresh database of DogWalkService
-        await connection.query('C');
-        await connection.end();
     }catch(error){
         process.stdout.write('A problem occurred when connecting to db! \n ');
         console.error(error);
