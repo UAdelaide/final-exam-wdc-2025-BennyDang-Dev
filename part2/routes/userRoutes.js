@@ -27,13 +27,15 @@ router.post('/login', async (req, res) => {
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
-
+    
     const rowObj = rows[0];
 
+    // * Save details into session
     req.session.authenticated = true;
     req.session.userid = rowObj.user_id;
     req.session.role = rowObj.role;
 
+    // * Redirect based on user role
     if(rowObj.role === 'owner'){
       res.status(301).json({ url: 'owner-dashboard.html' });
     }else{
