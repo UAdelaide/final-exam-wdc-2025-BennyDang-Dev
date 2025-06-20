@@ -45,6 +45,9 @@
         LogIn() {
           const xhttp = new XMLHttpRequest();
           xhttp.setRequestHeader('Content-type','application/json');
+          xhttp.onreadystatechange = function() {
+            
+          }
           xhttp.open('POST','/login',true);
           xhttp.send(JSON.stringify({
             username: username,
