@@ -192,13 +192,14 @@ let db;
 
 app.get('/api/dogs', async (req,res) => {
     try {
-
-    }catch(error)
-    const [rows] = await db.execute(`
+        const [rows] = await db.execute(`
         SELECT name AS dog_name, size, U.username AS owner_username
         FROM Dogs D
         INNER JOIN Users U ON D.owner_id = U.user_id;
     `);
+    }catch(error){
+        res.status(500).send('A problem occurred!');
+    }
 })
 
 app.get('/api/walkrequests/open',async(req,res) => {
