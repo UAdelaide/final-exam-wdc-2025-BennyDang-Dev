@@ -97,4 +97,6 @@ FROM
     INNER JOIN Users U ON WR.walker_id = U.user_id
     GROUP BY U.username) AS SQ;
 
-SELECT username FROM 
+SELECT username
+FROM Users
+WHERE role = 'walker';
