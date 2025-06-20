@@ -21,6 +21,7 @@ app.use(session({
     cookie: { secure: false }
 }));
 
+app.get()
 
 
 app.use(express.static(path.join(__dirname, '/public')));
@@ -36,6 +37,7 @@ app.use('/api/users', userRoutes);
 // Export the app instead of listening here
 module.exports = app;
 
+// ! Archived
 /*
 // * Checking if they have permission
 app.get("/walker-dashboard.html", (req,res,next) => {
