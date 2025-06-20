@@ -31,7 +31,7 @@ router.post('/login', async (req, res) => {
     const rowObj = rows[0];
 
     req.session.authenticated = true;
-    req.session.userid = user_id;
+    req.session.userid = rowObj.user_id;
     req.session.role = rowObj.role;
 
     if(rowObj.role === 'owner'){
