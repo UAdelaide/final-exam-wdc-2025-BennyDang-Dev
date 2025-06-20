@@ -56,8 +56,8 @@
         <td>{{ dog.dog_name }}</td>
         <td>{{ dog.size }}</td>
         <td>{{ dogTableObj.NameIDMap[dog.owner_username] }}</td>
-        <!-- !-->
-        <td><img src="" v-bind:src="dogTableObj.imageURLs[index]" alt="Image of Doggo"></td>
+        <!-- ! v-bind src -->
+        <td><img v-bind:src="dogTableObj.imageURLs[index]" alt="Image of Doggo"></td>
       </tr>
     </tbody>
    </table>
