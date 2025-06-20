@@ -45,4 +45,4 @@ INNER JOIN Users U ON D.owner_id = U.user_id;
 -- * Select walkers with walk ratings;
 SELECT walker_username, total_ratings, average_rating, completed_walks
 FROM WalkRatings WR
-INNER JOIN Users U ON User
+INNER JOIN Users U ON WR.walker_id = U.user_id
