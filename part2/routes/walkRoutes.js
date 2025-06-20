@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// * Getting all the requests made by the owner, order by date
+// * Getting all the requests made by the owner, order by date DESC
 router.get('/ownerRequests', async (req, res) => {
   const { userid } = req.session;
   // * Should get all requests regardless of open or close
@@ -29,7 +29,7 @@ router.get('/ownerRequests', async (req, res) => {
       JOIN Dogs d ON wr.dog_id = d.dog_id
       JOIN Users u ON d.owner_id = u.user_id
       WHERE u.user_id = ?
-      ORDER BY wr.
+      ORDER BY wr.created_at DESC;
       `;
   try{
     const [rows] = await db.query(query,[userid]);
