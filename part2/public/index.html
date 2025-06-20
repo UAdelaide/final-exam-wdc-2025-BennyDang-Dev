@@ -123,8 +123,8 @@
             });
             const userIDsMap = await.fetch('/')
 
-          }catch(error){
-            this.error = 
+          }catch(err){
+            this.error = err.message;
           }
 
         }
