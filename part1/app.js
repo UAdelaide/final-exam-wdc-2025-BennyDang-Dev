@@ -192,9 +192,9 @@ let db;
 
 app.get('/api/walkrequests/open',async(req,res) => {
     try {
-
+        
     }catch{
-        res.status(500).send();
+        res.status(500).send('A problem occurred!');
     }
 })
 
