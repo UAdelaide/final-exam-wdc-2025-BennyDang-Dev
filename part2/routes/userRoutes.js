@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
     if(rowObj.role === 'owner'){
       res.redirect(201,'http://localhost:8080/owner-dashboard.html');
     }else{
-      res.redirect(201,'/walker-dashboard.html');
+      res.redirect(201,'http://localhost:8080/walker-dashboard.html');
     }
 
 
