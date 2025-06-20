@@ -200,7 +200,6 @@ app.get('/api/walkers/summary', async(req,res) => {
         `);
         const usernames = rows[0].usernames;
         res.json(usernames);
-    throw new Error();
     }catch(error){
         res.status(500).send('A problem occurred!');
     }
