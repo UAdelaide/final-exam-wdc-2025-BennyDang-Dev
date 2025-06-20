@@ -77,9 +77,7 @@
           loginError: "",
           gotData: false,
           error: "",
-          dogTableObj: {
-            
-          }
+          dogTableObj: {}
         };
       },
       beforeMount(){
@@ -124,7 +122,7 @@
             dogsData.forEach(element => {
               userSET.add(element.owner_username);
             });
-            const userIDsMap = await fetch('/api/users/getOwnerIDs');
+            const r = await fetch('/api/users/getOwnerIDs');
             const response = await res.json();
             if(!res.ok) throw new Error(response.error || 'Error get user ids!');
 
