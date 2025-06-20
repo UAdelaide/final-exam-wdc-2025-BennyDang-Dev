@@ -102,7 +102,8 @@
         async function fetchDogs() {
           try {
             const res = await fetch('/api/walks/getOwnerDogs');
-            console.log(res.json());
+            const result = await res.json();
+            
             dogObj.value = await res.json();
           }catch(error){
             error.value = 'Failed to get dogs';
