@@ -56,6 +56,7 @@
             const res = await fetch('/api/users/me');
             const result = await res.json();
             if(!res.ok) throw new Error(result.error);
+            // * store in vue variable
             user.value = result.userid;
             // console.log(user.value);
           }catch(err){
