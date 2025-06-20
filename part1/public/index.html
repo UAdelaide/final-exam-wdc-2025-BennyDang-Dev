@@ -36,15 +36,17 @@
             flex-direction: column;
             border: 1px solid red
         }
+        .container > h1 {
+            justify-content: ;
+        }
     </style>
 
 </head>
 <body>
     <main id="app">
-        <div>
-
+        <div class="container">
+            <h1>Dog of the day</h1>
         </div>
-        <h1>Dog of the day</h1>
         <!-- ! html-validate don't recognise vue src binding attribute -->
         <img :src="imageURL"/>
     </main>
