@@ -199,7 +199,6 @@ app.get('/api/walkers/summary', async(req,res) => {
         `);
     throw new Error();
     }catch(error){
-        res.statusMessage('A problem occurred!');
         res.status(500).end();
     }
 
