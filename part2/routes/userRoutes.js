@@ -100,7 +100,7 @@ router.post('/getOwnerIDs', async (req,res) => {
     const [rows] = db.execute(query,[usernames]);
     res.json(rows);
   }catch(error){
-    res.status(500).
+    res.status(500).json({ error: 'Can\' get user ids!' });
   }
 
 });
