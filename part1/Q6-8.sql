@@ -83,4 +83,4 @@ SELECT JSON_OBJECTAGG(U.username, COUNT(walker_id))
 FROM WalkApplications WA
 INNER JOIN WalkRequests WR ON WA.request_id = WR.request_id
 INNER JOIN Users U on WA.walker_id = U.user_id
-WHERE WA.status = 'accepted' AND WR.status = 'completed';
+HAVING WA.status = 'accepted' AND WR.status = 'completed';
