@@ -36,8 +36,8 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/getOwnerDogs', async (req,res) => {
-  
-  const query =
+  const { user_id } = req.session;
+  const query = `SELECT `
 })
 
 // POST an application to walk a dog (from walker)
