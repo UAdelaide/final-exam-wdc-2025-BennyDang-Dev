@@ -38,3 +38,5 @@ FROM Dogs D
 INNER JOIN Users U ON D.owner_id = U.user_id;
 
 SELECT request_id, DOGNAME, requested_time, duration_minutes, location, owner_username
+FROM WalkRequests WR
+INNER JOIN Dogs D ON WR.dog_id = 
