@@ -190,6 +190,8 @@ let db;
 // * Routes
 // * Testing querries can be found Q6-8.sql
 
+app.get()
+
 app.get('/api/walkrequests/open',async(req,res) => {
     try {
         const [rows] = await db.execute(`
@@ -201,10 +203,10 @@ app.get('/api/walkrequests/open',async(req,res) => {
         `);
         res.json(rows);
 
-    }catch{
+    }catch(error){
         res.status(500).send('A problem occurred!');
     }
-})
+});
 
 // ? Maybe we should select a list of walker user names
 // ? Then have two querries selecting completed walks and ratings that is mapped based on username
