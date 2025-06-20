@@ -30,7 +30,6 @@ let db;
 
     }catch(error){
         process.stdout.write('A problem occurred when connecting to db! /n ');
-        
     }
 })();
 
