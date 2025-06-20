@@ -114,7 +114,7 @@
             // * Get Dogs Data
             const res = await fetch('/api/dogs');
             const result = await res.json();
-            if(!res.ok) throw new Error()
+            if(!res.ok) throw new Error(result.error)
             const dogsData = result;
             // * Get UserData
             const userSET = new Set();
@@ -124,7 +124,7 @@
             const userIDsMap = await.fetch('/')
 
           }catch(error){
-            console.log(error);
+            this.error = 
           }
 
         }
