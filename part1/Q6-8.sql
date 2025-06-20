@@ -32,4 +32,4 @@ INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments ) VAL
     ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 1 , 5 , '');
 
 -- * Some Test Querries
-SELECT 
+SELECT name, size, 
