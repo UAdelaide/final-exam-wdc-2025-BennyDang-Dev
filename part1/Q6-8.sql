@@ -101,6 +101,6 @@ FROM Usersp
 WHERE role = 'walker';
 
 -- * For Q17
-SELECT JSON_OBJECTAGG()
+SELECT JSON_OBJECTAGG(U.username,U.)
 FROM Users U
-WHERE U 
+WHERE U.username IN ('alice123','bobwalker')
