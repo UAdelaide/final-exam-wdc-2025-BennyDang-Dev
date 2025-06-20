@@ -48,13 +48,14 @@
         const message = ref('');
         const error = ref('');
         // const user = 3;
-        const user = null;
+        let user = null;
 
         async function getCurrentUser(){
           try{
             const res = await fetch('/api/users/me');
             if(!res.ok) throw new Error('Failed to get walker id!');
-            
+            const result = res.json
+            user = result.userid;
           }catch(err){
             error.value = err.message;
           }
