@@ -82,7 +82,8 @@ router.get('/me', (req, res) => {
   if (!req.session.authenticated) {
     return res.status(401).json({ error: 'Not logged in' });
   }
-  res.json(req.session.userid);
+  return res.status(401).json({ error: 'Not logged in' });
+  // res.json(req.session.userid);
 });
 
 
