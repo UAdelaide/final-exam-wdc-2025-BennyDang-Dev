@@ -198,7 +198,8 @@ app.get('/api/walkers/summary', async(req,res) => {
            FROM Users
            WHERE role = 'walker';
         `);
-        const usernames = rows[]
+        const usernames = rows[0].usernames;
+        res.json(usernames);
     throw new Error();
     }catch(error){
         res.status(500).send('A problem occurred!');
