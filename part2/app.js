@@ -28,6 +28,8 @@ app.get('/',(req,res) => {
             res.sendFile(path.join(__dirname,'./public/owner-dashboard.html'));
         }else if (role === "walker"){
             res.sendFile(path.join(__dirname,'./public/walker-dashboard.html'));
+        }else{
+            res.redirect('/');
         }
     }else{
         res.sendFile(path.join(__dirname,'./public/index.html'));
