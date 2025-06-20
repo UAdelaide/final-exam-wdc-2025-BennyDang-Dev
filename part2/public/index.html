@@ -56,7 +56,8 @@
           // * To their dashboard
           xhttp.onreadystatechange = function() {
             if(this.readyState === 4 && this.status === 401){
-              component.error = this.response.error;
+              console.log(this.response);
+              component.error = this.response["error"];
               component.invalid = true;
             }
           }
