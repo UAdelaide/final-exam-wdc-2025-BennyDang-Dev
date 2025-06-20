@@ -51,5 +51,5 @@ GROUP BY WRT.walker_id;
 
 SELECT *
 FROM WalkRequests WR
-INNER JOIN Walk
+LEFT JOIN WalkRatings WRT ON WR.request_id = WRT.request_id
 WHERE WR.status = 'completed'
