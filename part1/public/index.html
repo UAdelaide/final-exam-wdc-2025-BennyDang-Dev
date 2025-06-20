@@ -85,7 +85,8 @@
                 return {
                     clicked1: false,
                     imageURL: "",
-                    security_question: ""
+                    security_question: "",
+                    security: false
                 };
             },
             beforeMount(){
@@ -105,7 +106,9 @@
                     this.clicked1 = !this.clicked1;
                 },
                 checkSecurity(){
-                    if(this.security_question === "42")
+                    if(this.security_question === "Everything and 42"){
+                        security
+                    }
                 }
             }
         }).mount('#app');
