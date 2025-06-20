@@ -117,15 +117,15 @@ app.use(express.static(path.join(__dirname, 'public')));
             `);
         }
 
-        [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Users`);
+        [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Dogs`);
         if(rows[0].count === 0){
             await db.execute(`
-                INSERT INTO Users ( username, email, password_hash, role ) VALUES
-                    ( 'alice123', 'alice@example.com', 'hashed123', 'owner' ),
-                    ( 'bobwalker', 'bob@example.com', 'hashed456', 'walker' ),
-                    ( 'carol123', 'carol@example.com', 'hashed789', 'owner '),
-                    ( 'kinglouisXIV', 'theking@example.com', 'hashed1214', 'owner' ),
-                    ( 'zewalkerz', 'zewalkerz@example.com', 'hashed1519', 'walker');
+                INSERT INTO Dogs ( owner_id, name, size ) VALUES
+                    ( (SELECT user_id FROM Users WHERE Users.username = 'alice123' LIMIT 1), 'Max', 'medium' ),
+                    ( (SELECT user_id FROM Users WHERE Users.username = 'carol123' LIMIT 1), 'Bella', 'small' ),
+                    ( (SELECT user_id FROM Users WHERE Users.username = 'kinglouisXIV' LIMIT 1), 'Belfort', 'large' ),
+                    ( (SELECT user_id FROM Users WHERE Users.username = 'kinglouisXIV' LIMIT 1), 'Lupin', 'large' ),
+                    ( (SELECT user_id FROM Users WHERE Users.username = 'alice123' LIMIT 1), 'Fluke', 'large' );
             `);
         }
 
