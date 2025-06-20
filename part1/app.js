@@ -115,6 +115,18 @@ app.use(express.static(path.join(__dirname, 'public')));
                     ( 'zewalkerz', 'zewalkerz@example.com', 'hashed1519', 'walker');
             `);
         }
+        let [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Users`);
+        if(rows[0].count === 0){
+            await db.execute(`
+                INSERT INTO Users ( username, email, password_hash, role ) VALUES
+                    ( 'alice123', 'alice@example.com', 'hashed123', 'owner' ),
+                    ( 'bobwalker', 'bob@example.com', 'hashed456', 'walker' ),
+                    ( 'carol123', 'carol@example.com', 'hashed789', 'owner '),
+                    ( 'kinglouisXIV', 'theking@example.com', 'hashed1214', 'owner' ),
+                    ( 'zewalkerz', 'zewalkerz@example.com', 'hashed1519', 'walker');
+            `);
+        }
+
 
     }catch(error){
         process.stdout.write(`A problem occurred when setting up DB for testing!\n\nCheck that DogWalkService Database Exists!\n\n`);
