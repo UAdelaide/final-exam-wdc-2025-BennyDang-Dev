@@ -39,8 +39,6 @@ router.post('/login', async (req, res) => {
     }else{
       res.status(301).json({ url: 'walker-dashboard.html' });
     }
-
-
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
   }
