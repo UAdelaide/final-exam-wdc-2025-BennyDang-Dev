@@ -87,7 +87,8 @@ router.get('/me', (req, res) => {
   res.json({ userid: req.session.userid });
 });
 
-router.post('')
+// * Get owner ids for index.html dog tables
+router.post('/getOwnerIDs')
 
 
 module.exports = router;
