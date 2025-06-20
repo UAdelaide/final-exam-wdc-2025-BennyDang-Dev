@@ -131,7 +131,11 @@
         logOut(){
           const xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function(){
-            if
+            if(this.readyState === 4){
+              if(this.status === 301){
+                window.location.href = 
+              }
+            }
           }
           xhttp.open("GET","/api/users/logout",true);
           xhttp.send();
