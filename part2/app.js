@@ -24,13 +24,14 @@ app.use(session({
     cookie: { secure: false }
 }));
 
+app.use('/api/walks', walkRoutes);
+app.use('/api/users', userRoutes);
+
 app.get("/owner-dashboard.html",(req,res) => {
+    console.log(true);
     const { authenticated, role } = req.session;
     console.log(authenticated, role);
 });
-
-app.use('/api/walks', walkRoutes);
-app.use('/api/users', userRoutes);
 
 // Export the app instead of listening here
 module.exports = app;
