@@ -25,10 +25,11 @@ let db;
             user: 'root',
             password: ''
         });
-        
+        await connection.query();
+
 
     }catch(error){
-
+        
     }
 })
 
