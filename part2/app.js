@@ -25,7 +25,6 @@ app.use(session({
 }));
 
 app.get("/index.html",(req,res) => {
-    console.log()
     const { authenticated, role } = req.session;
     console.log(authenticated, role);
     if(authenticated){
