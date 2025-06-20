@@ -33,7 +33,7 @@ INSERT INTO WalkApplications ( request_id, walker_id, status ) VALUES
     ( 5, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
     ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
     ( 7, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'pending'),
-    ( 8, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'pending'),
+    ( 8, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'pending');
 
 INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments ) VALUES
     ( 2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 1 , 5 , 'some comments'),
