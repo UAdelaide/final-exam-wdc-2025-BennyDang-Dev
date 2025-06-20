@@ -52,7 +52,6 @@
           // * Saving parent vue pointer
           const component = this;
           const xhttp = new XMLHttpRequest();
-          xhttp.setRequestHeader('Content-type','application/json');
           // * Handling errors as correct credential would redirect the user
           // * To their dashboard
           xhttp.onreadystatechange = function() {
@@ -62,6 +61,7 @@
             }
           }
           xhttp.open('POST','/login',true);
+          xhttp.setRequestHeader('Content-type','application/json');
           xhttp.send(JSON.stringify({
             username: username,
             password: password
