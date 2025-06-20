@@ -103,8 +103,10 @@
           try {
             const res = await fetch('/api/walks/getOwnerDogs');
             const result = await res.json();
+
+            if(!res.ok) throw new Error();
             
-            dogObj.value = await res.json();
+
           }catch(error){
             error.value = 'Failed to get dogs';
           }
