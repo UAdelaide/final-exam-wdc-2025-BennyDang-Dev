@@ -88,7 +88,7 @@ FROM
     WHERE WA.status = 'accepted' AND WR.status = 'completed'
     GROUP BY U.username) AS SQ;
 
-SELECT JSON_OBJECTAGG(SQ.username, JSON_OBJECT())
+SELECT JSON_OBJECTAGG(SQ.username, JSON_OBJECT(total_ratings, SQ.total_ratings, average_rating, SQ.average_rating))
 (SELECT U.username, COUNT(walker_id) AS total_ratings, ROUND(AVG(rating),1) AS average_rating
 FROM WalkRatings WR
 INNER JOIN Users U ON WR.walker_id = U.user_id
