@@ -32,6 +32,6 @@ INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments ) VAL
     ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 1 , 5 , '');
 
 -- * Some Test Querries
-SELECT name, size,
+SELECT name, size, U.user_name
 FROM Dogs D
-INNER JOIN User U ON D.
+INNER JOIN User U ON D.owner_id = U.user_id;
