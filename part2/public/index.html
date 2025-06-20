@@ -77,7 +77,9 @@
           loginError: "",
           gotData: false,
           error: "",
-          dogTableObj: {}
+          dogTableObj: {
+            
+          }
         };
       },
       beforeMount(){
@@ -114,7 +116,7 @@
             // * Get Dogs Data
             const res = await fetch('/api/dogs');
             const result = await res.json();
-            if(!res.ok) throw new Error('Error get data from /api/dogs')
+            if(!res.ok) throw new Error('Error get data from /api/dogs!')
             const dogsData = result;
 
             // * Get UserData
@@ -124,7 +126,8 @@
             });
             const userIDsMap = await fetch('/api/users/getOwnerIDs');
             const response = await res.json();
-            if(!res.ok) throw new Error(response.)
+            if(!res.ok) throw new Error(response.error || 'Error get user ids!');
+
 
           }catch(err){
             this.error = err.message;
