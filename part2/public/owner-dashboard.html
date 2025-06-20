@@ -106,9 +106,10 @@
 
             // * If result is not ok (200) then we throw error
             if(!res.ok){
-              throw new Error(result.error || 'Error fetching dogs!');
+              throw new Error(result.error || 'Error fetching doggos!');
             }
             dogObj.value = result;
+            console.log(dogObj.value);
 
           }catch(err){
             error.value = err.message;
