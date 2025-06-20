@@ -5,6 +5,12 @@ require('dotenv').config();
 
 const app = express();
 
+app.get("/",(req,res) => {
+    console.log(true);
+    const { authenticated, role } = req.session;
+    console.log(authenticated, role);
+});
+
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
@@ -26,12 +32,6 @@ app.use(session({
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
-
-app.get("/",(req,res) => {
-    console.log(true);
-    const { authenticated, role } = req.session;
-    console.log(authenticated, role);
-});
 
 // Export the app instead of listening here
 module.exports = app;
