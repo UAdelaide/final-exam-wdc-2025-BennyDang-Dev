@@ -87,7 +87,7 @@ router.get('/me', (req, res) => {
   res.json({ userid: req.session.userid });
 });
 
-router.get('')
+router.post('')
 
 
 module.exports = router;
