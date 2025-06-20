@@ -168,6 +168,22 @@ let db;
             `);
         }
 
+         [rows] = await db.execute(`SELECT COUNT(*) AS count FROM WalkRatings`);
+        if(rows[0].count === 0){
+            await db.execute(`
+                INSERT INTO WalkApplications ( request_id, walker_id, status ) VALUES
+                    ( 1, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
+                    ( 2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
+                    ( 3, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
+                    ( 4, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
+                    ( 5, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
+                    ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
+                    ( 7, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
+                    ( 8, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'pending'),
+                    ( 9, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'pending');
+            `);
+        }
+
     }catch(error){
         process.stdout.write(`A problem occurred when setting up DB for testing!\n\nCheck that DogWalkService Database Exists!\n\n`);
         console.error(error);
