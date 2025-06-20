@@ -170,8 +170,12 @@ let db;
 // * Testing querries can be found Q6-8.sql
 
 app.get('/api/walkers/summary', async(req,res) => {
-    const [rows] = await db.execute(``);
-    console.log(rows[0])
+    const [rows] = await db.execute(`
+        SELECT JSON_ARRAYAGG(username) AS usernames
+        FROM Users
+        WHERE role = 'walker';
+        `);
+    console.log(rows[0]);
 });
 
 app.use('/', indexRouter);
