@@ -6,6 +6,7 @@ INSERT INTO Users ( username, email, password_hash, role ) VALUES
     (),
     ();
 
+-- * Five Doggos
 INSERT INTO Dogs ( owner_id, name, size ) VALUES
     ( (SELECT owner_id FROM Users WHERE username = 'alice123' LIMIT 1), 'Max', 'medium' ),
     ( (SELECT owner_id FROM Users WHERE username = 'carol123' LIMIT 1), 'Bella', 'small' ),
@@ -13,5 +14,6 @@ INSERT INTO Dogs ( owner_id, name, size ) VALUES
     ( (SELECT owner_ud FROM Users WHERE username = '...' LIMIT 1), '', '' ),
     ( (SELECT owner_ud FROM Users WHERE username = '...' LIMIT 1), '', '' );
 
+-- * Five Walkies
 INSERT INTO WalkRequests ( dog_id, requested_time, duration_minutes, location, status ) VALUES
     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Max' LIMIT 1), )
