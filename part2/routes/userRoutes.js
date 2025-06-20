@@ -93,12 +93,10 @@ router.post('/getOwnerIDs', async (req,res) => {
   // const { usernames } = req.body;
   const usernames = ['alice123','bobwalker'];
   const query = `
-    SELECT U.username,U.user_id
-    FROM Users U
-    WHERE U.username IN ( ? )
+    SELECT username, user_id
+    FROM Users
+    WHERE username IN ( ? )
     `;
-  db.pool.getConnection('')
-
   try {
     const [rows] = await db.execute(query,[["alice123"]]);
     res.json(rows);
