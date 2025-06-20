@@ -47,7 +47,7 @@ app.get("/owner-dashboard.html",(req,res, next) => {
     res.redirect(301,"/index.html");
 });
 
-// * If they access index.html then if the session is active
+// * If they access anything then if the session is active
 // * They will be redirected to their dashboard without having to
 // * re login
 app.get("/",(req,res, next) => {
