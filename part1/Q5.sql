@@ -11,7 +11,7 @@ INSERT INTO Dogs ( owner_id, name, size ) VALUES
     ( (SELECT owner_id FROM Users WHERE username = 'alice123' LIMIT 1), 'Max', 'medium' ),
     ( (SELECT owner_id FROM Users WHERE username = 'carol123' LIMIT 1), 'Bella', 'small' ),
     ( (SELECT owner_ud FROM Users WHERE username = 'kinglouisXIV' LIMIT 1), 'Belfort', 'large' ),
-    ( (SELECT owner_ud FROM Users WHERE username = '...' LIMIT 1), '', '' ),
+    ( (SELECT owner_ud FROM Users WHERE username = 'kinglouisXIV' LIMIT 1), 'Lupin', '' ),
     ( (SELECT owner_ud FROM Users WHERE username = '...' LIMIT 1), '', '' );
 
 -- * Five Walkies
