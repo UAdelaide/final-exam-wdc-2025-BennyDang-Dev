@@ -51,7 +51,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         }
 
     }catch(error){
-        process.stdout.write(' \n ');
+        process.stdout.write('A problem occurred when settign up DB for testing! \n ');
         console.error(error);
     }
 })();
