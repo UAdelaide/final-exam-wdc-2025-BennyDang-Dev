@@ -234,7 +234,7 @@ app.get('/api/walkers/summary', async(req,res) => {
                     tempObj.average_ratings = ratings[username].average_ratings;
                 }else{
                     tempObj.total_ratings = 0;
-                    tempObj,
+                    tempObj.average_ratings = null;
                 }
             }
         }
