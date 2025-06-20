@@ -48,3 +48,4 @@ FROM WalkRatings WRT
 INNER JOIN Users U ON WRT.walker_id = U.user_id
 INNER JOIN WalkRequest WR ON WRT.request_id = WR.request_id
 GROUP BY WRT.walker_id
+HAVING WR.status = 'completed
