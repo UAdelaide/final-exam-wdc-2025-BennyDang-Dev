@@ -66,8 +66,8 @@ GROUP BY WRT.walker_id;
 
 
 -- * Maybe we should select a list of walker user names
--- * Then have two querries selecting completed walks and ratings that is mapped based on username
--- * We can then process it to 
+-- * Then have two querries selecting completed walks and ratings that is mapped based on username -> object
+-- * We can then process it by looping through the usernames
 SELECT U.username, COUNT(walker_id) AS completed_walks
 FROM WalkApplications WA
 INNER JOIN WalkRequests WR ON WA.request_id = WR.request_id
