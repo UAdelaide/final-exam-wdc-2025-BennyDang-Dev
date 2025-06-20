@@ -30,7 +30,7 @@ router.get('/ownerRequests', async (req, res) => {
       JOIN Dogs d ON wr.dog_id = d.dog_id
       JOIN Users u ON d.owner_id = u.user_id
       WHERE u.user_id = ?
-      ORDER BY wr.created_at DESC;
+      ORDER BY wr.requested_time DESC;
       `;
   try{
     const [rows] = await db.query(query,[userid]);
