@@ -49,7 +49,7 @@ app.get("/index.html",(req,res, next) => {
        if(role === "owner"){
         res.redirect(301,"/owner-dashboard.html");
        }else if (role === "walker"){
-        res.redirect(301,"/waker-dashboard.html");
+        res.redirect(301,"/walker-dashboard.html");
        }
     }else{
         next();
