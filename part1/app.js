@@ -168,7 +168,7 @@ let db;
     }
 })();
 
-app.use 
+app.get(``);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
