@@ -189,7 +189,6 @@ let db;
 
 // * Routes
 // * Testing querries can be found Q6-8.sql
-
 app.get('/api/walkers/summary', async(req,res) => {
     try {
         let rows;
@@ -217,7 +216,8 @@ app.get('/api/walkers/summary', async(req,res) => {
                     FROM WalkRatings WR
                     INNER JOIN Users U ON WR.walker_id = U.user_id
                     GROUP BY U.username) AS SQ;
-            `)
+        `);
+        const ratings = rows[0].ratings;
     }catch(error){
         res.status(500).send('A problem occurred!');
     }
