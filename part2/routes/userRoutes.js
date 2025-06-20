@@ -108,7 +108,7 @@ router.post('/getOwnerIDs', async (req,res) => {
         if(err2){
           res.status(500).json({ error: 'Error querying the database!' });
         }
-        cons
+        console.log(rows);
         res.json(rows);
       });
     });
