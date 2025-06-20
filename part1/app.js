@@ -49,6 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
             `);
 
         }
+    throw new Error('hello');
 
     }catch(error){
         process.stdout.write(`A problem occurred when setting up DB for testing!\nCheck that DogWalkService Database Exists!\n`);
