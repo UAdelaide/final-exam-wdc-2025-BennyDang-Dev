@@ -29,6 +29,8 @@ app.get('/',(req,res) => {
         }else if (role === "walker"){
             res.sendFile(path.join(__dirname,'./public/walker-dashboard.html'));
         }
+    }else{
+        res.sendFile(path.join(__dirname,'./public/index.html'));
     }
 })
 
