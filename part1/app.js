@@ -25,6 +25,8 @@ let db;
             user: 'root',
             password: ''
         })
+    }catch(error){
+        
     }
 })
 
