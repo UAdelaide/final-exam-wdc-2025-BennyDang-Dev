@@ -22,7 +22,12 @@ app.use(session({
 }));
 
 app.get('/',(req,res) => {
-    const { authenticated, }
+    const { authenticated, role } = req.session;
+    if(authenticated){
+        if(role === "owner"){
+            res.sendFile(path.join(__dirname,'./public/walker-dashboard.html'));
+        }
+    }
 })
 
 
