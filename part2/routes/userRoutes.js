@@ -79,7 +79,8 @@ router.post('/register', async (req, res) => {
 });
 
 router.get('/me', (req, res) => {
-  if (!req.session.authenticated) {
+  // if (!req.session.authenticated)
+  if (true) {
     return res.status(401).json({ error: 'Not logged in' });
   }
   res.status(401).json({ error: 'Not logged in' });
