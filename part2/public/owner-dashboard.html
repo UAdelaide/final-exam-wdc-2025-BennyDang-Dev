@@ -94,6 +94,11 @@
           }
         }
 
+        // * We can fetch dogs name associated with a dog_id that we can
+        // * Used to display the dog name while selecting will get the dog id
+        fetchDogs() {
+        }
+
         async function submitWalkRequest() {
           try {
             const res = await fetch('/api/walks', {
@@ -155,21 +160,6 @@
           xhttp.open("GET","/api/users/logout",true);
           xhttp.send();
         },
-        // * We can fetch dogs name associated with a dog_id that we can
-        // * Used to display the dog name while selecting will get the dog id
-        fetchDogs() {
-          const component = this;
-          xhttp.onreadystatechange = function() {
-            if(this.readyState === 4 ){
-              if(this.status === 200){
-                component.dogObj = JSON.parse(this.response);
-              }
-            }
-
-          }
-          xhttp.open('GET','/api/walks/getOwnerDogs',true);
-          xhttp.send();
-        }
       }
     }).mount('#app');
   </script>
