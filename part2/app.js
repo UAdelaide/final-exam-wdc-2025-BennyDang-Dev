@@ -25,7 +25,12 @@ app.use(session({
 }));
 
 app.get("/index.html",(req,res) => {
-    const { authenticated, role } = session.req
+    const { authenticated, role } = req.session;
+    if(authenticated){
+        if(role == "owner"){
+            
+        }
+    }
 })
 
 app.use('/api/walks', walkRoutes);
