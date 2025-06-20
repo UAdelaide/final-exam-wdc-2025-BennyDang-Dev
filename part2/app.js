@@ -69,6 +69,20 @@ app.get("/index.html",(req,res, next) => {
     }
 });
 
+app.get('/api/dogs', async (req,res) => {
+    try {
+        const [rows] = await db.execute(`
+            SELECT name AS dog_name, size, U.username AS owner_username
+            FROM Dogs D
+            INNER JOIN Users U ON D.owner_id = U.user_id;
+        `);
+        res.json(rows);
+
+    }catch(error){
+        res.status(500).send('A problem occurred!');
+    }
+});
+
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Routes
