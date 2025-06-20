@@ -29,8 +29,7 @@ let db;
         await connection.query('SOURCE dogwalks.sql');
     }catch(error){
         process.stdout.write('A problem occurred when connecting to db! /n ');
-        process.stdout.console.error();
-        
+        process.stdout.console.error(error);
     }
 })();
 
