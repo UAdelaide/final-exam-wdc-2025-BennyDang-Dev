@@ -53,7 +53,7 @@
     <tbody>
       <tr v-for="(dog, index) in dogTableObj.dogsData">
         <th scope="row">{{ index }}</th>
-        <td>{{ dog.name }}</td>
+        <td>{{ dog.dog_name }}</td>
         <td>{{ dog.size }}</td>
         <td>{{ dogTableObj.NameIDMap[dog.owner_username] }}</td>
         <td><img v-bind:src="dogTableObj.imageURLs[index]" alt="Image of Doggo"></td>
