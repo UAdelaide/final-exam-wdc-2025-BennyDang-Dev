@@ -102,7 +102,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         // ------------------------------------------
         // ! Inserting Records
         // ------------------------------------------
-        const rows = [];
+        let rows = [];
 
         // * Insert records into Users table if table if empty
         [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Users`);
@@ -116,7 +116,8 @@ app.use(express.static(path.join(__dirname, 'public')));
                     ( 'zewalkerz', 'zewalkerz@example.com', 'hashed1519', 'walker');
             `);
         }
-        let [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Users`);
+
+        [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Users`);
         if(rows[0].count === 0){
             await db.execute(`
                 INSERT INTO Users ( username, email, password_hash, role ) VALUES
