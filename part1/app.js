@@ -150,7 +150,8 @@ let db;
             `);
         }
 
-        [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Applications`);
+        // * This is necessary for getting completed walks
+        [rows] = await db.execute(`SELECT COUNT(*) AS count FROM WalkApplications`);
         if(rows[0].count === 0){
             await db.execute(`
                 INSERT INTO WalkApplications ( request_id, walker_id, status ) VALUES
