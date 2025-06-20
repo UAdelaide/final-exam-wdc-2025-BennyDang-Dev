@@ -91,7 +91,12 @@ router.get('/me', (req, res) => {
 router.post('/getOwnerIDs',(req,res) => {
   // * Is array
   const { usernames } = req.body;
-
+  const query = `
+    SELECT JSON_OBJECTAGG(U.username,U.user_id)
+    FROM Users U
+    WHERE U.username IN ('alice123','bobwalker');
+    `;
+  
 
 });
 
