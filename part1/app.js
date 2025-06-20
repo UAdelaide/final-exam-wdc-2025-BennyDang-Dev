@@ -26,7 +26,7 @@ let db;
             password: ''
         });
         // * Start with a fresh database of DogWalkService
-        await connection.query('SOURCE dogwalks.sql');
+        await connection.query('CREATE DATABASE IF NOT EXISTS testbd');
         await connection.end();
     }catch(error){
         process.stdout.write('A problem occurred when connecting to db! \n ');
