@@ -22,7 +22,7 @@ INSERT INTO WalkRequests ( dog_id, requested_time, duration_minutes, location, s
     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Belfort' LIMIT 1), '2025-06-15 08:30:00', 60, 'Versailles', 'completed' ),
     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Lupin' LIMIT 1), '2025-06-15 09:00:00', 30, 'Versailles', 'completed' ),
     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Fluke' LIMIT 1), '2025-06-18 09:00:00', 45, 'Fort Funston', 'completed' ),
-    -- * So this one have no rating
+    -- * So this one have no rating - id = 7
     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Bella' LIMIT 1), '2025-06-19 10:00:00', 30, 'Beachside Ave', 'completed' ),
     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Max' LIMIT 1), '2025-06-24 16:00:00', 30, 'Parklands', 'open' ),
     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Fluke' LIMIT 1), '2025-06-23 17:00:00', 45, 'Fort Funston', 'open' );
@@ -33,6 +33,7 @@ INSERT INTO WalkApplications ( request_id, walker_id, status ) VALUES
     ( 3, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
     ( 4, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
     ( 5, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
+    ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
     ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
     ( 7, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'pending'),
     ( 8, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'pending');
