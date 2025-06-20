@@ -25,7 +25,7 @@ app.get("/walker-dashboard.html", (req,res,next) => {
     }else{
         res.redirect(301,"/index.html");
     }
-})
+});
 
 app.get("/owner-dashboard.html",(req,res, next) => {
     const { authenticated, role } = req.session;
