@@ -79,6 +79,7 @@ GROUP BY U.username;
 -- * Maybe we should select a list of walker user names
 -- * Then have two querries selecting completed walks and ratings that is mapped based on username -> object
 -- * We can then process it by looping through the usernames
+
 SELECT JSON_OBJECTAGG(SQ.username, SQ.completed_walks) AS completed_walks
 FROM
     (SELECT U.username AS username, COUNT(walker_id) AS completed_walks
@@ -88,7 +89,8 @@ FROM
     WHERE WA.status = 'accepted' AND WR.status = 'completed'
     GROUP BY U.username) AS SQ;
 
-SELECT JSON_OBJECTAGG(SQ.username, JSON_OBJECT(total_ratings, SQ.total_ratings, average_rating, SQ.average_rating)) AS ratings
+
+SELECT JSON_OBJECTAGG(SQ.username, JSON_OBJECT('total_ratings', SQ.total_ratings, 'average_rating', SQ.average_rating)) AS ratings
 FROM
     (SELECT U.username, COUNT(walker_id) AS total_ratings, ROUND(AVG(rating),1) AS average_rating
     FROM WalkRatings WR
