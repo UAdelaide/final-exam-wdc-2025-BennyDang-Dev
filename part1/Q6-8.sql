@@ -62,4 +62,5 @@ GROUP BY WRT.walker_id;
 
 SELECT *
 FROM WalkApplications WA
-INNER JOIN WalkRequests WR ON WA.
+INNER JOIN WalkRequests WR ON WA.request_id = WR.request_id
+WHERE WA.status = 'accepted' AND WR.status = ''
