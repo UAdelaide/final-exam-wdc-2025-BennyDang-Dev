@@ -176,7 +176,7 @@ app.get('/api/walkers/summary', async(req,res) => {
         WHERE role = 'walker';
     `);
     console.log(rows[0]);
-    res.send()
+    res.send();
 });
 
 app.use('/', indexRouter);
