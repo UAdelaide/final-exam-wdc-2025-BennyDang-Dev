@@ -42,7 +42,7 @@ router.get('/getOwnerDogs', async (req,res) => {
     const [rows] = await db.execute(query);
     res.json(rows);
   }catch(error){
-    res.status(201).
+    res.status(500).json({error: 'Failed fecthing dogs' })
   }
 })
 
