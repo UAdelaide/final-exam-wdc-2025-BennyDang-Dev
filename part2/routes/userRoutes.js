@@ -30,9 +30,9 @@ router.post('/login', async (req, res) => {
 
     const rowObj = rows[0];
     if(rowObj.role === 'owner'){
-      res.redirect();
+      res.redirect('/owner-dashboard.html');
     }
-    res.redirect();
+    res.redirect('/');
 
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
