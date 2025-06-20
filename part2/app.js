@@ -19,7 +19,7 @@ app.use(session({
 app.get("/walker-dashboard.html", (req,res,next) => {
     const { authenticated, role } = req.session;
     if(authenticated){
-       if(role === ""){
+       if(role === "walker"){
         next();
        }
     }else{
