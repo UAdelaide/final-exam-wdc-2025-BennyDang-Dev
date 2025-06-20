@@ -99,3 +99,6 @@ FROM
 SELECT JSON_ARRAYAGG(username) AS usernames
 FROM Usersp
 WHERE role = 'walker';
+
+-- * For Q17
+SELECT JSON_OBJECTAGG()

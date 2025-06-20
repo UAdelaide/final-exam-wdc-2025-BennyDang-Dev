@@ -95,6 +95,4 @@ router.post('/getOwnerIDs',(req,res) => {
 
 });
 
-SELECT JSON_OBJECTAGG()
-
 module.exports = router;
