@@ -97,7 +97,8 @@ router.post('/getOwnerIDs', async (req,res) => {
     WHERE U.username IN ( ? );
     `;
   try {
-    const [rows] =
+    const [rows] = db.execute(query,[usernames]);
+    
   }catch(error){
 
   }
