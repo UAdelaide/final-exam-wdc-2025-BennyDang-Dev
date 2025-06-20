@@ -28,6 +28,7 @@ router.get('/ownerRequests', async (req, res) => {
       FROM WalkRequests wr
       JOIN Dogs d ON wr.dog_id = d.dog_id
       JOIN Users u ON d.owner_id = u.user_id
+      WHERE u.user_id = ?
       ORDER BY 
       `;
   try{
