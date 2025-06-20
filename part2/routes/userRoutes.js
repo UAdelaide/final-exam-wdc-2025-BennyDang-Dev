@@ -32,9 +32,9 @@ router.post('/login', async (req, res) => {
     if(rowObj.role === 'owner'){
       res.redirect(201,'/owner-dashboard.html');
     }else{
-      
+      res.redirect(201,'/walker-dashboard.html');
     }
-    res.redirect(201,'/walker-dashboard.html');
+
 
   } catch (error) {
     throw error;
