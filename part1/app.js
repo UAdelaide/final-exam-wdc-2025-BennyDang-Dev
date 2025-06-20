@@ -238,7 +238,7 @@ app.get('/api/walkers/summary', async(req,res) => {
                     tempObj.total_ratings = ratings[username].total_ratings;
                     tempObj.average_ratings = ratings[username].average_rating;
                 }
-                tempObj.completed_walks = username.completed_walks;
+                tempObj.completed_walks = completed_walks[username];
             }
             console.log(tempObj);
             resObj.push(tempObj);
