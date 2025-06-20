@@ -16,6 +16,17 @@ app.use(session({
     cookie: { secure: false }
 }));
 
+app.get("/owner-dashboard.html",(req,res, next) => {
+    const { authenticated, role } = req.session;
+    if(authenticated){
+       if(role === "owner"){
+        next();
+       }
+    }else{
+        res.redirect(301,"/index.html");
+    }
+});
+
 app.get("/index.html",(req,res, next) => {
     const { authenticated, role } = req.session;
     if(authenticated){
@@ -29,15 +40,6 @@ app.get("/index.html",(req,res, next) => {
     }
 });
 
-app.get("/owner-dashboard.html",(req,res, next) => {
-    const { authenticated, role } = req.session;
-    if(authenticated){
-       if(role === "owner"){
-        next();
-    }else{
-        res.redirect(301,"/index.html");
-    }
-});
 
 // Middleware
 app.use(express.json());
