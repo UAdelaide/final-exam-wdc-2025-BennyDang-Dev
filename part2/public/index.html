@@ -125,7 +125,8 @@
             });
             res = await fetch('/api/users/getOwnerIDs');
             result = await res.json();
-            if(!res.ok) throw new Error(response.error || 'Error get user ids!');
+            if(!res.ok) throw new Error(result.error || 'Error get user ids!');
+            const IDsNameMap = 
 
 
           }catch(err){
