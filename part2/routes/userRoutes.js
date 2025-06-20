@@ -91,9 +91,10 @@ router.get('/me', (req, res) => {
 router.post('/getOwnerIDs',(req,res) => {
   // * Is array
   const { usernames } = req.body;
-  
+
 
 });
 
+SELECT 
 
 module.exports = router;
