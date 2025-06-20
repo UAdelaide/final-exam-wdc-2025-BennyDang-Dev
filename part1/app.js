@@ -199,7 +199,7 @@ app.get('/api/walkers/summary', async(req,res) => {
            WHERE role = 'walker';
         `);
         const usernames = rows[0].usernames;
-        res.json(usernames);
+
     }catch(error){
         res.status(500).send('A problem occurred!');
     }
