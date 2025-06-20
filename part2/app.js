@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const logger = require('morgan');
+const db = require('../')
 require('dotenv').config();
 
 const app = express();
@@ -69,7 +70,8 @@ app.get("/index.html",(req,res, next) => {
     }
 });
 
-// * Imported from part1 as both 
+// * Imported from part1 as both can not run at the same time
+// * Else a port conflict will happen
 app.get('/api/dogs', async (req,res) => {
     try {
         const [rows] = await db.execute(`
