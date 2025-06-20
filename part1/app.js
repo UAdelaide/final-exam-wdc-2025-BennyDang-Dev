@@ -24,10 +24,10 @@ let db;
             host: 'localhost',
             user: 'root',
             password: '',
-            database: ''
+            database: 'DogWalkService'
         });
     }catch(error){
-        process.stdout.write('A problem occurred when connecting to db! \n ');
+        process.stdout.write('Check that  \n ');
         console.error(error);
     }
 })();
