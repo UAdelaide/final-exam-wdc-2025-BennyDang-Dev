@@ -119,7 +119,7 @@ app.use(express.static(path.join(__dirname, 'public')));
             `);
         }
 
-        // * Insert records into Users table if table if empty
+        // * Insert records into Dogs table if table if empty
         [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Dogs`);
         if(rows[0].count === 0){
             await db.execute(`
@@ -132,6 +132,7 @@ app.use(express.static(path.join(__dirname, 'public')));
             `);
         }
 
+        // * Insert records into WalkRequests table if table if empty
         [rows] = await db.execute(`SELECT COUNT(*) AS count FROM WalkRequests`);
         if(rows[0].count === 0){
             await db.execute(`
@@ -144,6 +145,7 @@ app.use(express.static(path.join(__dirname, 'public')));
             `);
         }
 
+        // * Insert records into WalkRatings table if table if empty
         [rows] = await db.execute(`SELECT COUNT(*) AS count FROM WalkRatings`);
         if(rows[0].count === 0){
             await db.execute(`
