@@ -146,7 +146,7 @@ let db;
                     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Bella' LIMIT 1), '2025-06-19 10:00:00', 30, 'Beachside Ave', 'completed' ),
                     -- * These are just open
                     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Max' LIMIT 1), '2025-06-24 16:00:00', 30, 'Parklands', 'open' ),
-                    ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Fluke' LIMIT 1), '2025-06-23 17:00:00', 45, 'Fort Funston', 'pending' );
+                    ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Fluke' LIMIT 1), '2025-06-23 17:00:00', 45, 'Fort Funston', 'open' );
             `);
         }
 
