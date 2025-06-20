@@ -30,10 +30,10 @@ app.get("/index.html",(req,res) => {
         if(role === "owner"){
             res.redirect(301,'/owner-dashboard.html');
         }else{
-            res.redirect(301,'/')
+            res.redirect(301,'/walker-dashboard.html');
         }
     }
-})
+});
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
