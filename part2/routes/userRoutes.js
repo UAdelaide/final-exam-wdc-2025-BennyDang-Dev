@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.get('logout',(req,res) => {
-  const 
+  
 })
 
 // POST a new user (simple signup)
