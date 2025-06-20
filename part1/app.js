@@ -199,7 +199,7 @@ app.get('/api/walkers/summary', async(req,res) => {
         `);
     throw new Error();
     }catch(error){
-        res.setS
+        res.
         res.send('A problem occurred!');
     }
 
