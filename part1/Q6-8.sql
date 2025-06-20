@@ -40,6 +40,6 @@ INNER JOIN Users U ON D.owner_id = U.user_id;
 SELECT request_id, D.name AS dog_name, requested_time, duration_minutes, location, U.username AS owner_username
 FROM WalkRequests WR
 INNER JOIN Dogs D ON WR.dog_id = D.dog_id
-INNER JOIN Users U ON D.owner_id = U.user_id
+INNER JOIN Users U ON D.owner_id = U.user_id;
 
-SELECT 
+SELECT
