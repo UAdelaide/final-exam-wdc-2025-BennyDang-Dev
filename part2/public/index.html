@@ -51,9 +51,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(dog, index)">
-        <th scope="row"></th>
-        <td>{{}}</td>
+      <tr v-for="(dog, index) in dogsData">
+        <th scope="row">{{ index }}</th>
+        <td>{{  }}</td>
         <td>{{}}</td>
         <td>{{}}</td>
       </tr>
