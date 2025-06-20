@@ -1,2 +1,3 @@
 -- * Five users
-INSERT INTO 
+INSERT INTO Users VALUES
+    (  )
