@@ -106,7 +106,7 @@ router.post('/getOwnerIDs', async (req,res) => {
       connection.query(query,[usernames],function(err2,rows,fields){
         connection.release();
         if(err2){
-          res.status(500).json({ error: 'Error querying the database!' )
+          res.status(500).json({ error: 'Error querying the database!' });
         }
         res.json(rows);
       });
@@ -115,7 +115,7 @@ router.post('/getOwnerIDs', async (req,res) => {
     // res.json(rows);
   }catch(error){
     res.status(500).json({ error: 'Can\' get user ids!' });
-    console.log(error);
+    // console.log(error);
   }
 
 });
