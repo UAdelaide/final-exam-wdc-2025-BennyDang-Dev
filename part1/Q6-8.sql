@@ -96,3 +96,5 @@ FROM
     FROM WalkRatings WR
     INNER JOIN Users U ON WR.walker_id = U.user_id
     GROUP BY U.username) AS SQ;
+
+SELECT username FROM 
