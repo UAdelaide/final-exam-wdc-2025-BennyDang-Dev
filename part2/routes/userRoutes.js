@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
     if(rowObj.role === 'owner'){
       res.status(300).json({ url: 'http://localhost:8080/walker-dashboard.html' });
     }else{
-      res.json({ url: 'http://localhost:8080/walker-dashboard.html' });
+      res.status(300).json({ url: 'http://localhost:8080/walker-dashboard.html' });
     }
 
 
