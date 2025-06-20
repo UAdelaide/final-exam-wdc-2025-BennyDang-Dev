@@ -29,7 +29,9 @@ router.post('/login', async (req, res) => {
     }
 
     const rowObj = rows[0];
-    
+    if(rowObj.role == 'owner'){
+      res.redirect();
+    }
 
     res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
