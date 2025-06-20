@@ -26,7 +26,7 @@ app.get("/owner-dashboard.html",(req,res, next) => {
     const { authenticated, role } = req.session;
     if(authenticated){
        if(role === "owner"){
-        res.sendFile(path.join(__dirname,'./public/walker-dashboard.html'));
+        res.sendFile(path.join(__dirname,'./public/owner-dashboard.html'));
        }else{
         // * if not intended user, will be redirected to index.html
         // * If owner try to access walker, they will be redirected to their dashboard
