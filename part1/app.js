@@ -26,6 +26,10 @@ app.use(express.static(path.join(__dirname, 'public')));
             database: 'DogWalkService'
         });
 
+        // ------------------------------------------
+        // ! Inserting Records
+        // ------------------------------------------
+
         // * Create Users table if not exists
         await db.execute(`
             CREATE TABLE IF NOT EXISTS Users (
@@ -95,6 +99,8 @@ app.use(express.static(path.join(__dirname, 'public')));
             );
         `);
 
+        // ------------------------------------------
+        // ! Inserting Records
         // ------------------------------------------
 
         // * Insert records into Users table if table if empty
