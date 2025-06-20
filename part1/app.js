@@ -190,8 +190,8 @@ let db;
 // * Routes
 // * Testing querries can be found Q6-8.sql
 
-app.get('/api/dogs',(req,res) => {
-    
+app.get('/api/dogs', async (req,res) => {
+    const [rows] = await db.execute();
 })
 
 app.get('/api/walkrequests/open',async(req,res) => {
