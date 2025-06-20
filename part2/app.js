@@ -14,7 +14,7 @@ const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 app.use(session({
-    secret: 'string of your choice', // Used to COMPUTE HASH
+    secret: '', // Used to COMPUTE HASH
     resave: false, // repeat the session or not
     // have all sessions have a session attached to
     // them, even if we haven't initialised it
