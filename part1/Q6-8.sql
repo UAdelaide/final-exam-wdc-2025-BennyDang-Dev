@@ -67,6 +67,6 @@ GROUP BY WRT.walker_id;
 SELECT U.username, COUNT(walker_id) AS completed_walks
 FROM WalkApplications WA
 INNER JOIN WalkRequests WR ON WA.request_id = WR.request_id
-INNER JOIN Users U on WA.walker_id = U.walker_id
+INNER JOIN Users U on WA.walker_id = U.user_id
 WHERE WA.status = 'accepted' AND WR.status = 'completed'
-GROUP BY 
+GROUP BY U.username;
