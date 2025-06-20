@@ -21,6 +21,7 @@ app.get("/index.html",(req,res) => {
     if(authenticated){
         console.log(true);
     }
+    
 });
 
 // Middleware
