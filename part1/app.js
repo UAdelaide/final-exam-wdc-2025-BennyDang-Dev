@@ -223,6 +223,7 @@ app.get('/api/walkers/summary', async(req,res) => {
         `);
         const ratings = rows[0].ratings;
 
+        const resObj = {};
         for(let i=0; i<usernames.length; i++){
             
         }
