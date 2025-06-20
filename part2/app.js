@@ -33,7 +33,7 @@ app.get("/",(req,res, next) => {
         res.redirect(301,"/walker-dashboard.html");
        }
     }else{
-        next();
+        
     }
 });
 
