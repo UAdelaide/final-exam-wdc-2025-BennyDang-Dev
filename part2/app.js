@@ -40,8 +40,8 @@ app.get("/owner-dashboard.html",(req,res, next) => {
        if(role === "owner"){
         next();
        }
-        res.redirect(301,"/index.html");
     }
+    res.redirect(301,"/index.html");
 });
 
 // * If they access index.html then if the session is active
