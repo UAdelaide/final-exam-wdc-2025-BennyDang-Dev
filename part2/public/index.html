@@ -121,7 +121,7 @@
             result = await res.json();
             if(!res.ok) throw new Error('Error get data from /api/dogs!')
             const dogsData = result;
-          this.
+            this.dogTableObj.dogsData = dogsData;
 
             // * Get UserData
             const userSET = new Set();
@@ -136,6 +136,7 @@
             result = await res.json();
             if(!res.ok) throw new Error(result.error || 'Error get user ids!');
             const NameIDMap = result.userIDs;
+            this.dogTableObj.NameIDMap = NameIDMap;
 
             // * Get dog images
             // * We can get a api for each dog or we could get all at once
