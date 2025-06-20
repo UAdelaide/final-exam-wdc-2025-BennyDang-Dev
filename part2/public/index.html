@@ -60,7 +60,7 @@
               component.invalid = true;
             }
           }
-          xhttp.open('POST','/api/user/login',true);
+          xhttp.open('POST','/api/users/login',true);
           xhttp.setRequestHeader('Content-type','application/json');
           xhttp.send(JSON.stringify({
             username: component.username,
