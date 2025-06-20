@@ -21,20 +21,7 @@ app.use(session({
     cookie: { secure: false }
 }));
 
-app.get('/',(req,res) => {
-    const { authenticated, role } = req.session;
-    if(authenticated){
-        if(role === "owner"){
-            res.sendFile(path.join(__dirname,'./public/owner-dashboard.html'));
-        }else if (role === "walker"){
-            res.sendFile(path.join(__dirname,'./public/walker-dashboard.html'));
-        }else{
-            res.redirect('/');
-        }
-    }else{
-        res.sendFile(path.join(__dirname,'./public/index.html'));
-    }
-})
+
 
 
 app.use(express.static(path.join(__dirname, '/public')));
@@ -96,6 +83,21 @@ app.get("/",(req,res, next) => {
        }
     }else{
         next();
+    }
+});
+
+app.get('/',(req,res) => {
+    const { authenticated, role } = req.session;
+    if(authenticated){
+        if(role === "owner"){
+            res.sendFile(path.join(__dirname,'./public/owner-dashboard.html'));
+        }else if (role === "walker"){
+            res.sendFile(path.join(__dirname,'./public/walker-dashboard.html'));
+        }else{
+            res.redirect('/');
+        }
+    }else{
+        res.sendFile(path.join(__dirname,'./public/index.html'));
     }
 });
 */
