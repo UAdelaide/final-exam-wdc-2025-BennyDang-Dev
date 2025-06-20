@@ -2,6 +2,15 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
+// GET all users (for admin/testing)
+router.get('/', async (req, res) => {
+  try {
+    const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
+    res.json(rows);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch users' });
+  }
+});
 
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
@@ -20,16 +29,6 @@ router.post('/login', async (req, res) => {
     res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
-  }
-});
-
-// GET all users (for admin/testing)
-router.get('/', async (req, res) => {
-  try {
-    const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
-    res.json(rows);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch users' });
   }
 });
 
@@ -55,7 +54,6 @@ router.get('/me', (req, res) => {
   }
   res.json(req.session.user);
 });
-
 
 
 module.exports = router;
