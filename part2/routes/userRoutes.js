@@ -54,8 +54,7 @@ router.get('/logout',(req,res) => {
     res.status(301).json({ url: "index.html" });
   }catch(error){
     // * Do nothing if it cant logout
-    // * For some reasons
-    console.log(error);
+    // console.log(error);
     res.sendStatus(500);
   }
 });
