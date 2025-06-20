@@ -44,6 +44,7 @@ router.get('/getOwnerDogs', async (req,res) => {
     res.json(rows);
   }catch(error){
     res.status(500).json({ error: 'Error fetching doggos!' });
+    throw(error);
   }
 });
 
