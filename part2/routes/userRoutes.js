@@ -91,11 +91,11 @@ router.get('/me', (req, res) => {
 router.post('/getOwnerIDs', async (req,res) => {
   // * Is array
   // const { usernames } = req.body;
-  const usernames = ['alice123','bobwalker'];
+  const usernames = [];
   const query = `
     SELECT JSON_OBJECTAGG(U.username,U.user_id) AS userIDs
     FROM Users U
-    WHERE U.username IN ( ? )
+    WHERE U.username IN ( 'alice123','bobwalker' )
     `;
   try {
     const [rows] = await db.execute(query,[usernames]);
