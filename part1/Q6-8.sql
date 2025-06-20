@@ -46,4 +46,5 @@ INNER JOIN Users U ON D.owner_id = U.user_id;
 SELECT U.username AS walker_username, COUNT(WR.rating_id) AS total_ratings, ROUND(AVG(rating),1) AS average_rating
 FROM WalkRatings WR
 INNER JOIN Users U ON WR.walker_id = U.user_id
+INNER JOIN 
 GROUP BY WR.walker_id
