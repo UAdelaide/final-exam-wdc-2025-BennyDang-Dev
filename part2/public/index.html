@@ -77,7 +77,10 @@
           loginError: "",
           gotData: false,
           error: "",
-          dogTableObj: {}
+          dogTableObj: {
+            dogsData: {},
+            n
+          }
         };
       },
       beforeMount(){
@@ -159,7 +162,7 @@
           }catch(err){
             this.error = err.message;
           }
-          
+
 
         }
       }
