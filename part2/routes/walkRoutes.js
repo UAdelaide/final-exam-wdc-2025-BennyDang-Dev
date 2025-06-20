@@ -40,7 +40,8 @@ router.get('/getOwnerDogs', async (req,res) => {
   const query = `SELECT name, dog_id FROM Dogs WHERE owner_id = ?`;
   try {
     const [rows] = await db.execute(query,user_id);
-    res.json(rows);
+    res.status(500).
+    // res.json(rows);
   }catch(error){
     res.status(500).json({ error: 'Failed fecthing dogs' });
   }
