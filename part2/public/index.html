@@ -46,6 +46,7 @@
    <div class="alert alert-danger" v-if="invalid">
     {{ error }}
    </div>
+   <!-- * Will not render if there is no data -->
    <table class="table table-stripped" v-if="gotData">
     <thead>
       <tr>
