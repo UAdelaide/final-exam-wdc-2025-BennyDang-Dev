@@ -33,6 +33,7 @@
    <div class="alert alert-danger" v-if="invalid">
     {{ loginError }}
    </div>
+
    <!-- * Q17 -->
     <!-- * /api/dogs + dogs.ceo API, if we use /api/dogs as is -->
     <!-- * Then we will have to query for owner id using owner username -->
@@ -40,6 +41,10 @@
     <!-- * Dog ID is just the row id as the query should return them based on addition anyways -->
     <!-- * Use set to store the user names -->
    <h1 class="mb-4">All Registered Dogs</h1>
+   <!-- * Error Alerting -->
+   <div class="alert alert-danger" v-if="invalid">
+    {{ loginError }}
+   </div>
    <table class="table table-stripped" v-if="gotData">
     <thead>
       <tr>
@@ -61,7 +66,7 @@
       </tr>
     </tbody>
    </table>
-  
+
     <!--<a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>-->
 
