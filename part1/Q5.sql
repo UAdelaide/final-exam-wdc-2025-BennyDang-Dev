@@ -7,4 +7,4 @@ INSERT INTO Users ( username, email, password_hash, role ) VALUES
     ();
 
 INSERT INTO Dogs ( owner_id, name, size ) VALUES
-    ( (SELECT owner_id WHERE  LIMIT 1) )
+    ( (SELECT owner_id FROM Users WHERE username = 'alice123' LIMIT 1), 'Max',  )
