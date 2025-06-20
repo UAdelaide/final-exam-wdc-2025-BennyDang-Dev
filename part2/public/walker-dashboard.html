@@ -89,12 +89,14 @@
           applyToWalk
         };
       },
+      // * Function for logging out
       methods: {
         LogOut(){
           const xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function(){
             if(this.readyState === 4){
               if(this.status === 301){
+                // * Redirect browser to index.html once session is destroyed
                 window.location.href = JSON.parse(this.response).url;
               }
             }
