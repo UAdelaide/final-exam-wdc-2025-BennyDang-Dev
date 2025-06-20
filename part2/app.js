@@ -14,6 +14,7 @@ const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 app.use(session({
+    // * Generated randomly from https://random.org
     secret: 'hZsUxpJ4B8PUNYfHKcDHwf5TJsm2mUZe', // Used to COMPUTE HASH
     resave: false, // repeat the session or not
     // have all sessions have a session attached to
