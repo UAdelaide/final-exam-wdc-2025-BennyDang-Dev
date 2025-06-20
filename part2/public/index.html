@@ -122,7 +122,8 @@
             dogsData.forEach(element => {
               userSET.add(element.owner_username);
             });
-            const userIDsMap = await.fetch('/api/users/getOwnerIDs');
+            const userIDsMap = await fetch('/api/users/getOwnerIDs');
+            const response = await res.json();
             
 
           }catch(err){
