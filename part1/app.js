@@ -240,7 +240,6 @@ app.get('/api/walkers/summary', async(req,res) => {
                 }
                 tempObj.completed_walks = completed_walks[username];
             }
-            console.log(tempObj);
             resObj.push(tempObj);
         }
         res.send(resObj);
