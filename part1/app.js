@@ -153,8 +153,8 @@ app.use(express.static(path.join(__dirname, 'public')));
         if(rows[0].count === 0){
             await db.execute(`
                 INSERT INTO WalkRequests (request_id, walker_id, owner_id, rating, comments ) VALUES
-                    ( 2, (SELECT user_id FROM users WHERE username = 'bobwalker'),  , 'some comments'),
-                    ( 3, (SELECT user_id FROM users WHERE username = 'bobwalker'),  , 'some comments'),
+                    ( 2, (SELECT user_id FROM users WHERE username = 'bobwalker'), 1 , 'some comments'),
+                    ( 3, (SELECT user_id FROM users WHERE username = 'bobwalker'), 3 , 'some comments'),
                     ( 4, (SELECT user_id FROM users WHERE username = 'zewalkerz'),  , ''),
                     ( 5, (SELECT user_id FROM users WHERE username = 'bobwalker'),  , ''),
                     ( 6, (SELECT user_id FROM users WHERE username = 'zewalkerz'),  , '');
