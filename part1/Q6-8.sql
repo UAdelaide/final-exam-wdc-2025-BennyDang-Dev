@@ -71,7 +71,7 @@ INNER JOIN Users U on WA.walker_id = U.user_id
 WHERE WA.status = 'accepted' AND WR.status = 'completed'
 GROUP BY U.username;
 
-SELECT U.username, COUNT(walker_id) AS total_ratings
+SELECT U.username, COUNT(walker_id) AS total_ratings, ROUND(AVG(rating),1) AS average_rating
 FROM WalkRatings WR
 INNER JOIN Users U ON WR.walker_id = U.user_id
 GROUP BY U.username;
