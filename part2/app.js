@@ -21,6 +21,22 @@ app.use(session({
     cookie: { secure: false }
 }));
 
+
+
+app.use(express.static(path.join(__dirname, '/public')));
+
+// Routes
+const walkRoutes = require('./routes/walkRoutes');
+const userRoutes = require('./routes/userRoutes');
+const { nextTick } = require('process');
+
+app.use('/api/walks', walkRoutes);
+app.use('/api/users', userRoutes);
+
+// Export the app instead of listening here
+module.exports = app;
+
+/*
 // * Checking if they have permission
 app.get("/walker-dashboard.html", (req,res,next) => {
     const { authenticated, role } = req.session;
@@ -67,16 +83,4 @@ app.get("/",(req,res, next) => {
         next();
     }
 });
-
-app.use(express.static(path.join(__dirname, '/public')));
-
-// Routes
-const walkRoutes = require('./routes/walkRoutes');
-const userRoutes = require('./routes/userRoutes');
-const { nextTick } = require('process');
-
-app.use('/api/walks', walkRoutes);
-app.use('/api/users', userRoutes);
-
-// Export the app instead of listening here
-module.exports = app;
+*/
