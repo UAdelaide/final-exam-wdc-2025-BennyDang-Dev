@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         });
 
         // ------------------------------------------
-        // ! Inserting Records
+        // ! Creating Tables if not exists
         // ------------------------------------------
 
         // * Create Users table if not exists
@@ -104,7 +104,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         // ------------------------------------------
 
         // * Insert records into Users table if table if empty
-        const [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Users`);
+        let [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Users`);
         if(rows[0].count === 0){
             await db.execute(`
                 INSERT INTO Users ( username, email, password_hash, role ) VALUES
@@ -114,8 +114,6 @@ app.use(express.static(path.join(__dirname, 'public')));
                     ( 'kinglouisXIV', 'theking@example.com', 'hashed1214', 'owner' ),
                     ( 'zewalkerz', 'zewalkerz@example.com', 'hashed1519', 'walker');
             `);
-
-
         }
 
     }catch(error){
