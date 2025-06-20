@@ -20,8 +20,10 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/ownerRequests', async (req, res) => {
+  const { userid } = 
+  const query =
   try{
-    const [rows] = await db.query
+    const [rows] = await db.query()
   }
 })
 
