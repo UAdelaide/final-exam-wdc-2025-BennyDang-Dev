@@ -21,6 +21,7 @@ router.get('/', async (req, res) => {
 
 router.get('/ownerRequests', async (req, res) => {
   const { userid } = req.session;
+  // * Should get all requests regardless of open or close
   const query = `
       SELECT wr.*, d.name AS dog_name, d.size, u.username AS owner_name
       FROM WalkRequests wr
@@ -28,7 +29,8 @@ router.get('/ownerRequests', async (req, res) => {
       JOIN Users u ON d.owner_id = u.user_id
       `
   try{
-    const [rows] = await db.query()
+    const [rows] = await db.query(query,[userid]);
+    
   }
 })
 
