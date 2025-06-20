@@ -63,6 +63,7 @@
                 <input type="text" v-model="security_question"><br>
             </div>
             <button type="submit" @click="checkSecurity">Continue</button>
+            <p v-if="security">Yes!</p>
         </div>
         <div class="container center between" v-if="clicked1">
             <button type="submit">Continue</button>
@@ -70,7 +71,6 @@
                 <input type="text"><br>
                 <input type="password"><br>
             </div>
-            <p v-if="security">Yes!</p>
         </div>
         <div class="container right" v-if="clicked1">
             <p>1st field is username &nbsp;&verbar;&nbsp; 2nd field is password</p>
@@ -113,6 +113,4 @@
                 }
             }
         }).mount('#app');
-    </script>
-</body>
-</html>
+  
