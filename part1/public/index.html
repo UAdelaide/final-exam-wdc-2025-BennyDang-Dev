@@ -39,8 +39,8 @@
                     imageURL: ""
                 }
             },
-            mounted(){
-                getDogImage();
+            beforeMount(){
+                this.getDogImage();
             },
             method: {
                 async getDogImage(){
