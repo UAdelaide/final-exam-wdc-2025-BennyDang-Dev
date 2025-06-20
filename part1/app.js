@@ -191,7 +191,14 @@ let db;
 // * Testing querries can be found Q6-8.sql
 
 app.get('/api/dogs', async (req,res) => {
-    const [rows] = await db.execute();
+    try {
+
+    }catch(error)
+    const [rows] = await db.execute(`
+        SELECT name AS dog_name, size, U.username AS owner_username
+        FROM Dogs D
+        INNER JOIN Users U ON D.owner_id = U.user_id;
+    `);
 })
 
 app.get('/api/walkrequests/open',async(req,res) => {
