@@ -199,7 +199,17 @@ app.get('/api/walkers/summary', async(req,res) => {
            WHERE role = 'walker';
         `);
         const usernames = rows[0].usernames;
-
+        [rows] = await db.execute(`
+            SELECT JSON_OBJECTAGG(SQ.username, SQ.completed_walks) AS completed_walks
+            FROM
+                (SELECT U.username AS username, COUNT(walker_id) AS completed_walks
+                FROM WalkApplications WA
+                INNER JOIN WalkRequests WR ON WA.request_id = WR.request_id
+                INNER JOIN Users U on WA.walker_id = U.user_id
+                WHERE WA.status = 'accepted' AND WR.status = 'completed'
+                GROUP BY U.username) AS SQ;
+        `);
+        
     }catch(error){
         res.status(500).send('A problem occurred!');
     }
