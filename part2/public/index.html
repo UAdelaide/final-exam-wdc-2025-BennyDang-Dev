@@ -161,6 +161,7 @@
                 // * In the case that it fails will retry again
                 continue;
               }
+              this.dogTableObj.imageURLs = urlLists;
             }
           }catch(err){
             this.error = err.message;
