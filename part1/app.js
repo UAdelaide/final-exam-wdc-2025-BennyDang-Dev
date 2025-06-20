@@ -154,10 +154,10 @@ app.use(express.static(path.join(__dirname, 'public')));
             await db.execute(`
                 INSERT INTO WalkRequests (request_id, walker_id, owner_id, rating, comments ) VALUES
                     ( 2, (SELECT user_id FROM users WHERE username = 'bobwalker'),  ,),
-                    ( 3, (SELECT user_id FROM users WHERE username = 'bobwalker'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted' ),
-                    ( 4, (SELECT user_id FROM users WHERE username = 'zewalkerz'), '2025-06-15 08:30:00', 60, 'Versailles', 'open' ),
-                    ( 5, (SELECT user_id FROM users WHERE username = 'bobwalker'), '2025-06-15 09:00:00', 30, 'Versailles', 'accepted' ),
-                    ( 6, (SELECT user_id FROM users WHERE username = 'zewalkerz'), '2025-06-18 09:00:00', 45, 'Fort Funston', 'cancelled' );
+                    ( 3, (SELECT user_id FROM users WHERE username = 'bobwalker'),  ),
+                    ( 4, (SELECT user_id FROM users WHERE username = 'zewalkerz'), ),
+                    ( 5, (SELECT user_id FROM users WHERE username = 'bobwalker'), ),
+                    ( 6, (SELECT user_id FROM users WHERE username = 'zewalkerz'), );
             `);
         }
 
