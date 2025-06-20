@@ -24,7 +24,7 @@ app.use(session({
     cookie: { secure: false }
 }));
 
-app.get("/",(req,res) => {
+app.use("/",(req,res) => {
     const { authenticated, role } = req.session;
     console.log(authenticated, role);
     if(authenticated){
