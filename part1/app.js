@@ -232,7 +232,7 @@ app.get('/api/walkers/summary', async(req,res) => {
                 total_ratings: 0,
                 average_ratings: null,
                 completed_walks: 0
-             };
+            };
             if(typeof completed_walks[username] !== 'undefined'){
                 if(typeof ratings[username] !== 'undefined'){
                     tempObj.total_ratings = ratings[username].total_ratings;
