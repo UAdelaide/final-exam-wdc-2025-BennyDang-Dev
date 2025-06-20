@@ -34,7 +34,7 @@ app.get("/owner-dashboard.html",(req,res, next) => {
         res.redirect(301,"/index.html");
     }
     // * if not intended user, will be redirected to index.html
-    // * If owner try to access to r, they will be redirected to their dashboard
+    // * If owner try to access walker, they will be redirected to their dashboard
 });
 
 // * Checking if they have permission
@@ -50,7 +50,7 @@ app.get("/walker-dashboard.html", (req,res,next) => {
         res.redirect(301,"/index.html");
     }
     // * if not intended user, will be redirected to index.html
-    // * If walker try to access to owner, they will be redirected to their dashboard
+    // * If walker try to access owner, they will be redirected to their dashboard
 });
 
 // * If they access index.html then if the session is active
