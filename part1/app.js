@@ -49,6 +49,16 @@ app.use(express.static(path.join(__dirname, 'public')));
                     ( 'zewalkerz', 'zewalkerz@example.com', 'hashed1519', 'walker');
             `);
 
+        await db.execute(`
+            CREATE TABLE Dogs (
+    dog_id INT AUTO_INCREMENT PRIMARY KEY,
+    owner_id INT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    size ENUM('small', 'medium', 'large') NOT NULL,
+    FOREIGN KEY (owner_id) REFERENCES Users(user_id)
+);
+        `)
+
         }
     }catch(error){
         process.stdout.write(`A problem occurred when setting up DB for testing!\n\nCheck that DogWalkService Database Exists!\n\n`);
