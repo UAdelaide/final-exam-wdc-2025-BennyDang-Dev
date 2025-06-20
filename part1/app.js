@@ -230,7 +230,7 @@ app.get('/api/walkers/summary', async(req,res) => {
             let tempObj = {
                 walker_username: username,
                 total_ratings: 0,
-                average_ratings: 0,
+                average_ratings: null,
                 completed_walks: 0
              };
             if(typeof completed_walks[username] !== 'undefined'){
