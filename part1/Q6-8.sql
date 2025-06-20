@@ -102,3 +102,5 @@ WHERE role = 'walker';
 
 -- * For Q17
 SELECT JSON_OBJECTAGG()
+FROM Users U
+WHERE U 
