@@ -142,9 +142,9 @@
               res = await fetch('https://dog.ceo/api/breeds/image/random/50');
               result = await res.json();
               // * Test if status is success
-              if(result.status === "success"){
+              if(result.status === "success" || result.ok){
                 listLength -= 50;
-                urlLists.concat()
+                urlLists.concat(result.message);
               }else{
                 // * In the case that it fails will retry again
                 continue;
