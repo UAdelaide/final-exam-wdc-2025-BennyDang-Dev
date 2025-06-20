@@ -30,7 +30,7 @@ router.post('/login', async (req, res) => {
 
     const rowObj = rows[0];
     if(rowObj.role === 'owner'){
-      res.redirect(301,);
+      res.json
     }else{
       res.redirect(301,'http://localhost:8080/walker-dashboard.html');
     }
