@@ -27,7 +27,7 @@ let db;
             database: 'DogWalkService'
         });
     }catch(error){
-        process.stdout.write('Check that  \n ');
+        process.stdout.write('Check that DogWalkService DB Exist! \n ');
         console.error(error);
     }
 })();
