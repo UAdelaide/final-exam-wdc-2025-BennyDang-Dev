@@ -25,7 +25,7 @@ app.use(session({
 }));
 
 app.get("/index.html",(req,res) => {
-    
+    const { authenticated, role } = session.req
 })
 
 app.use('/api/walks', walkRoutes);
