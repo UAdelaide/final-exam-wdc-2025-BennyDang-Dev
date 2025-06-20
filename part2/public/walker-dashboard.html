@@ -54,7 +54,7 @@
           try{
             const res = await fetch('/api/users/me');
             const result = res.json();
-            console.log(json.stringify(result));
+            console.log(result);
             if(!res.ok) throw new Error(result.error);
             user.value = result.userid;
           }catch(err){
