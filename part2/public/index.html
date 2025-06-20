@@ -110,10 +110,11 @@
           try {
             // * Get Dogs Data
             const res = await fetch('/api/dogs');
-            const result = await res.json();
-            const dogsData = result.
+            const dogsData = await res.json();
             // * Get UserData
-
+            dogsData.array.forEach(element => {
+              
+            });
 
           }
 
