@@ -78,6 +78,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
+// * Get userid for the front end
 router.get('/me', (req, res) => {
   // if (!req.session.authenticated)
   if (!req.session.authenticated) {
