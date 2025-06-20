@@ -96,7 +96,7 @@
 
         // * We can fetch dogs name associated with a dog_id that we can
         // * Used to display the dog name while selecting will get the dog id
-        fetchDogs() {
+        async function fetchDogs() {
         }
 
         async function submitWalkRequest() {
@@ -136,14 +136,6 @@
           error,
           submitWalkRequest
         };
-      },
-      data() {
-        return {
-          dogObj: {}
-        }
-      },
-      onMounted(){
-        this.fetchDogs();
       },
       // * Function for logging out
       methods: {
