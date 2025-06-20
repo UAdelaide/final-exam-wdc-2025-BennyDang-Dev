@@ -147,6 +147,8 @@
               result = await res.json();
               // * Test if status is success
               if(result.status === "success" || result.ok){
+                // * Minus 50 anyway since less than = 50 would end the loop
+                // * While more than it would still continue
                 listLength -= 50;
                 urlLists = urlLists.concat(result.message);
               }else{
