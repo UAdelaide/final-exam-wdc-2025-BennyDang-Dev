@@ -15,18 +15,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-let db;
 
 // * Connect to mysql te
 (async () => {
     try {
-        const connection = await mysql.createConnection({
+        const db = await mysql.createConnection({
             host: 'localhost',
             user: 'root',
             password: '',
             database: 'DogWalkService'
         });
-        await c
+        
+
     }catch(error){
         process.stdout.write('Check that DogWalkService DB Exist! \n ');
         console.error(error);
