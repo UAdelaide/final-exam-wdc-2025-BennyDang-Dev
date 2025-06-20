@@ -209,6 +209,7 @@ app.get('/api/walkers/summary', async(req,res) => {
                 WHERE WA.status = 'accepted' AND WR.status = 'completed'
                 GROUP BY U.username) AS SQ;
         `);
+        const completed_walks = rows[0].completed_walks;
         
     }catch(error){
         res.status(500).send('A problem occurred!');
