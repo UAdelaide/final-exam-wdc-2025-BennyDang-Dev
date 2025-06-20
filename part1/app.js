@@ -192,7 +192,14 @@ let db;
 
 app.get('/api/walkrequests/open',async(req,res) => {
     try {
-        const res
+        const rows = db.execute(`
+            SELECT request_id, D.name AS dog_name, requested_time, duration_minutes, location, U.username AS owner_username
+                FROM WalkRequests WR
+                INNER JOIN Dogs D ON WR.dog_id = D.dog_id
+                INNER JOIN Users U ON D.owner_id = U.user_id
+                WHERE WR.status = 'open';
+        `);
+        res.json(rows);
     }catch{
         res.status(500).send('A problem occurred!');
     }
