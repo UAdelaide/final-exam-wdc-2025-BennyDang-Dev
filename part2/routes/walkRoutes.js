@@ -41,8 +41,8 @@ router.get('/getOwnerDogs', async (req,res) => {
   try {
     const [rows] = await db.execute(query);
     res.json(rows);
-  }else{
-    
+  }catch(error){
+    res.status(201).
   }
 })
 
