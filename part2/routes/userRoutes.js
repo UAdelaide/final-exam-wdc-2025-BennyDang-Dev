@@ -30,9 +30,9 @@ router.post('/login', async (req, res) => {
 
     const rowObj = rows[0];
     if(rowObj.role === 'owner'){
-      res.render('owner-dashboard.html');
+      res.redirect(201,'http://localhost:8080/owner-dashboard.html');
     }else{
-      res.render('walker-dashboard.html');
+      res.redirect(201,'/walker-dashboard.html');
     }
 
 
