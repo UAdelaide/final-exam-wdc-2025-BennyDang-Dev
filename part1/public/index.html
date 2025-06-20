@@ -62,7 +62,7 @@
                 <p>Security Question: The meaning of the universe</p>
                 <input type="text" v-model="security_question"><br>
             </div>
-            <button type="submit" @click="">Continue</button>
+            <button type="submit" @click="checkSecurity">Continue</button>
         </div>
         <div class="container center between" v-if="clicked1">
             <button type="submit">Continue</button>
