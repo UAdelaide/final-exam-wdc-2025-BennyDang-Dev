@@ -80,7 +80,8 @@ app.use(express.static(path.join(__dirname, 'public')));
         `);
 
         // * Create WalkApplication table if not exists
-        // ? Mostly for formality since none of of our routes
+        // ? Mostly for formality since none of of our routes make uses
+        // ? of the WalkApplications Tables
         await db.execute(`
             CREATE TABLE WalkApplications (
                 application_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -94,7 +95,7 @@ app.use(express.static(path.join(__dirname, 'public')));
             );
         `);
 
-        
+        // ------------------------------------------
 
         // * Insert records into Users table if table if empty
         const [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Users`);
