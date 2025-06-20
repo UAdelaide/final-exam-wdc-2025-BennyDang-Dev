@@ -6,7 +6,6 @@ require('dotenv').config();
 const app = express();
 
 app.get("/",(req,res) => {
-    console.log(true);
     const { authenticated, role } = req.session;
     console.log(authenticated, role);
 });
