@@ -148,7 +148,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         }
 
         // * Insert records into WalkRatings table if table is empty
-        // * Will Hard Code Request ID from WalkRequests that has been completed
+        // * Will Hard Code Request ID + Ofrom WalkRequests that has been completed
         [rows] = await db.execute(`SELECT COUNT(*) AS count FROM WalkRatings`);
         if(rows[0].count === 0){
             await db.execute(`
@@ -160,10 +160,6 @@ app.use(express.static(path.join(__dirname, 'public')));
                     ( 6, (SELECT user_id FROM users WHERE username = 'zewalkerz'),  , '');
             `);
         }
-
-`
-SELECT 
-`
 
 
     }catch(error){
