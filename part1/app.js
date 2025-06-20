@@ -227,18 +227,16 @@ app.get('/api/walkers/summary', async(req,res) => {
         const resObj = {};
         for(let i=0; i<usernames.length; i++){
             let username = usernames[i];
-            let tempObj = { walker_username: username };
+            let tempObj = {
+                walker_username: username,
+                
+             };
             if(typeof completed_walks[username] !== 'undefined'){
                 if(typeof ratings[username] !== 'undefined'){
                     tempObj.total_ratings = ratings[username].total_ratings;
                     tempObj.average_ratings = ratings[username].average_ratings;
-                }else{
-                    tempObj.total_ratings = ratings[username].total_ratings;
-                    tempObj.average_ratings = ratings[username].average_ratings;
                 }
                 tempObj.completed_walks = username.completed_walks;
-            }else{
-                
             }
         }
 
