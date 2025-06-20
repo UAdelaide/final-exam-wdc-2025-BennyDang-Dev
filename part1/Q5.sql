@@ -10,9 +10,9 @@ INSERT INTO Users ( username, email, password_hash, role ) VALUES
 INSERT INTO Dogs ( owner_id, name, size ) VALUES
     ( (SELECT owner_id FROM Users WHERE username = 'alice123' LIMIT 1), 'Max', 'medium' ),
     ( (SELECT owner_id FROM Users WHERE username = 'carol123' LIMIT 1), 'Bella', 'small' ),
-    ( (SELECT owner_ud FROM Users WHERE username = 'kinglouisXIV' LIMIT 1), 'Belfort', 'large' ),
-    ( (SELECT owner_ud FROM Users WHERE username = 'kinglouisXIV' LIMIT 1), 'Lupin', 'large' ),
-    ( (SELECT owner_ud FROM Users WHERE username = 'alice123' LIMIT 1), 'Fluke', 'large' );
+    ( (SELECT owner_id FROM Users WHERE username = 'kinglouisXIV' LIMIT 1), 'Belfort', 'large' ),
+    ( (SELECT owner_id FROM Users WHERE username = 'kinglouisXIV' LIMIT 1), 'Lupin', 'large' ),
+    ( (SELECT owner_id FROM Users WHERE username = 'alice123' LIMIT 1), 'Fluke', 'large' );
 
 -- * Five Walkies
 INSERT INTO WalkRequests ( dog_id, requested_time, duration_minutes, location, status ) VALUES
