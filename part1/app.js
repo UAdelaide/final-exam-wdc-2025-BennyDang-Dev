@@ -26,7 +26,7 @@ let db;
             password: ''
         });
         // * Start with a fresh database of DogWalkService
-        await connection.query(s);
+        await connection.query();
 
 
     }catch(error){
