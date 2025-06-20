@@ -142,9 +142,8 @@
               if(listLength <= 50){
                 res = await fetch('https://dog.ceo/api/breeds/image/random/'+listLength);
               }else{
-                 res = await fetch('https://dog.ceo/api/breeds/image/random/50';
+                 res = await fetch('https://dog.ceo/api/breeds/image/random/50');
               }
-
               result = await res.json();
               // * Test if status is success
               if(result.status === "success" || result.ok){
