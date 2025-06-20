@@ -24,7 +24,7 @@ router.post('/login', async (req, res) => {
 
     // console.log(rows);
 
-    // * If 
+    // * If no matching user, return error
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
