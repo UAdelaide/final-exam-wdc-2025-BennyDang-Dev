@@ -85,8 +85,6 @@ let db;
         `);
 
         // * Create WalkApplication table if not exists
-        // ? Mostly for formality since none of of our routes make uses
-        // ? of the WalkApplications Tables
         await db.execute(`
             CREATE TABLE IF NOT EXISTS WalkApplications (
                 application_id INT AUTO_INCREMENT PRIMARY KEY,
