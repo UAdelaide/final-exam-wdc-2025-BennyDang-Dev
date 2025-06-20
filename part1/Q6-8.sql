@@ -1,3 +1,4 @@
+
 INSERT INTO Users ( username, email, password_hash, role ) VALUES
     ( 'alice123', 'alice@example.com', 'hashed123', 'owner' ),
     ( 'bobwalker', 'bob@example.com', 'hashed456', 'walker' ),
@@ -22,3 +23,9 @@ INSERT INTO WalkRequests ( dog_id, requested_time, duration_minutes, location, s
     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Fluke' LIMIT 1), '2025-06-18 09:00:00', 45, 'Fort Funston', 'completed' ),
     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Max' LIMIT 1), '2025-06-19 16:00:00', 30, 'Parklands', 'open' )
 
+INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments ) VALUES
+    ( 2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 1 , 5 , 'some comments'),
+    ( 3, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 3 , 4 , 'some comments'),
+    ( 4, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 4 , 3 , ''),
+    ( 5, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 4 , 5 , ''),
+    ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 1 , 5 , '');
