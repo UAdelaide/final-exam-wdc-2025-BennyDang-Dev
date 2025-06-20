@@ -55,6 +55,7 @@ router.get('/logout',(req,res) => {
   }catch(error){
     // * Do nothing if it cant logout
     // * For some reasons
+    console.log(error);
     res.sendStatus(500);
   }
 });
