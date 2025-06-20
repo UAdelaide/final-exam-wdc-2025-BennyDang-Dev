@@ -89,7 +89,10 @@ router.get('/me', (req, res) => {
 
 // * Get owner ids for index.html dog tables
 router.post('/getOwnerIDs',(req,res) => {
+  // * Is array
+  const { usernames } = req.body;
   
+
 });
 
 
