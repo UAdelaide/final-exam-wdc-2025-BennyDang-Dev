@@ -57,7 +57,7 @@
         <div class="container center">
             <button type="submit" @click="!clicked1">Proceed</button>
         </div>
-        <div class="container center between">
+        <div class="container center between" v-if="clicked1">
             <div>
                 <p>Security Question: The meaning of the universe</p>
                 <input type="text" v-model="security_question"><br>
