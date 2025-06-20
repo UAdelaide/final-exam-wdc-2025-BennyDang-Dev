@@ -64,8 +64,8 @@ INNER JOIN Users U ON WRT.walker_id = U.user_id
 INNER JOIN WalkRequests WR ON WRT.request_id = WR.request_id
 GROUP BY WRT.walker_id;
 
-SELECT 
+SELECT *
 FROM WalkApplications WA
 INNER JOIN WalkRequests WR ON WA.request_id = WR.request_id
-RIGHT JOIN
+RIGHT JOIN Users U ON WA.walker_id = 
 WHERE WA.status = 'accepted' AND WR.status = 'completed';
