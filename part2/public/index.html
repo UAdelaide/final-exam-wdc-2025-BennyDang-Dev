@@ -137,7 +137,7 @@
             // * For multiple, MAX is 50
             const API_URL = 'https://dog.ceo/api/breeds/image/random/';
             let listLength = dogsData.length;
-            const urlLists = [];
+            let urlLists = [];
             while(listLength > 0){
               if(listLength <= 50){
                 res = await fetch('https://dog.ceo/api/breeds/image/random/'+listLength);
