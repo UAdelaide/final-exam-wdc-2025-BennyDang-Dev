@@ -43,7 +43,7 @@ INNER JOIN Dogs D ON WR.dog_id = D.dog_id
 INNER JOIN Users U ON D.owner_id = U.user_id;
 
 -- * Select walkers with walk ratings;
-SELECT U.username AS walker_username, COUNT(WR.rating_id) AS total_ratings, AVG(rating) AS average_rating
+SELECT U.username AS walker_username, COUNT(WR.rating_id) AS total_ratings, ROUND(AVG(rating),1) AS average_rating
 FROM WalkRatings WR
 INNER JOIN Users U ON WR.walker_id = U.user_id
 GROUP BY WR.walker_id
