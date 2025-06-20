@@ -148,7 +148,7 @@
               // * Test if status is success
               if(result.status === "success" || result.ok){
                 listLength -= 50;
-                urlLists.concat(result.message);
+                urlLists = urlLists.concat(result.message);
               }else{
                 // * In the case that it fails will retry again
                 continue;
