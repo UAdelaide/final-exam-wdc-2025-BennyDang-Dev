@@ -97,6 +97,7 @@ router.post('/getOwnerIDs', async (req,res) => {
     FROM Users
     WHERE username IN ( ? )`;
   try {
+    // * Fun fact this ONLY works in here 
     db.pool.getConnection(function(err1,connection){
       if(err1){
         return;
