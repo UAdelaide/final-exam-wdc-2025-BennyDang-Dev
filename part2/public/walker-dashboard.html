@@ -53,7 +53,9 @@
         async function getCurrentUser(){
           try{
             const res = await fetch('/api/users/me');
-            if(!res.ok) throw new Error('Failed to get walker id!')
+            if(!res.ok) throw new Error('Failed to get walker id!');
+          }catch(err){
+            error.value = err.message;
           }
         }
 
