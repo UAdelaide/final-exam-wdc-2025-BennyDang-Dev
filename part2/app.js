@@ -21,7 +21,9 @@ app.use(session({
     cookie: { secure: false }
 }));
 
-app.get('/',)
+app.get('/',(req,res) => {
+    const { authenticated, }
+})
 
 
 app.use(express.static(path.join(__dirname, '/public')));
