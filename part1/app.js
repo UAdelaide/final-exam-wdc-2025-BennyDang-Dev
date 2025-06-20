@@ -17,6 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 let db;
 
+// * Connect to mysql te
 (async () => {
     try {
         const connection = await mysql.createConnection({
