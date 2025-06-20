@@ -97,6 +97,6 @@ FROM
     INNER JOIN Users U ON WR.walker_id = U.user_id
     GROUP BY U.username) AS SQ;
 
-SELECT JSON_ARRAY(username) AS usernames
+SELECT JSON_ARRAYAGG(username) AS usernames
 FROM Users
 WHERE role = 'walker';
