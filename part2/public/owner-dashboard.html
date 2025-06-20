@@ -102,7 +102,7 @@
         async function fetchDogs() {
           try {
             const res = await fetch('/api/walks/getOwnerDogs');
-            dogObj =
+            dogObj.value = await res.json();
           }
         }
 
