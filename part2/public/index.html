@@ -113,13 +113,14 @@
           try {
             // * Get Dogs Data
             const res = await fetch('/api/dogs');
+            if(!res.ok) throw new Error()
             const dogsData = await res.json();
             // * Get UserData
             const userSET = new Set();
             dogsData.forEach(element => {
               userSET.add(element.owner_username);
             });
-            const userIDsMap = await.fetch
+            const userIDsMap = await.fetch('/')
 
           }catch(error){
             console.log(error);
