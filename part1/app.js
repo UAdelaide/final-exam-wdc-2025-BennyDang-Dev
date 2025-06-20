@@ -196,7 +196,9 @@ app.get('/api/walkers/summary', async(req,res) => {
            SELECT JSON_ARRAYAGG(username) AS usernames
            FROM Users
            WHERE role = 'walker';
-        `   );
+        `);
+    }catch(error){
+        res.send(500);
     }
 
 });
