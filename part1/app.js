@@ -192,11 +192,13 @@ let db;
 
 app.get('/api/walkers/summary', async(req,res) => {
     try {
-        const [rows] = await db.execute(`
+        let rows;
+        [rows] = await db.execute(`
            SELECT JSON_ARRAYAGG(username) AS usernames
            FROM Users
            WHERE role = 'walker';
         `);
+        const usernames = rows[]
     throw new Error();
     }catch(error){
         res.status(500).send('A problem occurred!');
