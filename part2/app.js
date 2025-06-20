@@ -26,9 +26,7 @@ app.use(session({
 
 app.get("/owner-dashboard.html",(req,res) => {
     const { authenticated, role } = req.session;
-    if(typeof authenticated){
-        if(role === "owner")
-    }
+    console.log(authenticated, role);
 });
 
 app.use('/api/walks', walkRoutes);
