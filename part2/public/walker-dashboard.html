@@ -48,7 +48,7 @@
         const message = ref('');
         const error = ref('');
         // const user = 3;
-        let user = -1;
+        let user = null;
 
         async function getCurrentUser(){
           try{
@@ -57,7 +57,7 @@
             if(!res.ok) throw new Error(result.error);
             user.value = result.userid;
           }catch(err){
-            console.log(err.message);
+            // console.log(err.message);
             error.value = err.message;
           }
         }
