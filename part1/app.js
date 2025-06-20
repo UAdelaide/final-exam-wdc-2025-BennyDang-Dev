@@ -18,7 +18,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 let db;
 
 (async () => {
-    try 
+    try {
+        const connection = await mysql 
+    }
 })
 
 app.use('/', indexRouter);
