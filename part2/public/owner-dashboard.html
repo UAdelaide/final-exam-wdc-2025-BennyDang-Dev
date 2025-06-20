@@ -99,7 +99,9 @@
         async function fetchDogs() {
           try {
             const res = await fetch('/api/walks/getOwnerDogs');
+            
             const result = await res.json();
+
             if(!res.ok) throw new Error(result.error || 'Error getting dogs');
 
           }catch(error){
