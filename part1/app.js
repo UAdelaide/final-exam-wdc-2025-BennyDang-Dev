@@ -29,7 +29,7 @@ let db;
 
 
     }catch(error){
-        
+        process.stdout.write('A problem occurred when ')
     }
 })
 
