@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// POST login (dummy version)
+// * POST login
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
