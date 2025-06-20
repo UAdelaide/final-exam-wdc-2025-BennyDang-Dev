@@ -38,7 +38,8 @@
         return {
           message: 'Welcome to the Dog Walking Service!',
           username: "",
-          password: ""
+          password: "",
+          invalid: false
         };
       },
       methods: {
@@ -49,7 +50,7 @@
           // * To their dashboard
           xhttp.onreadystatechange = function() {
             if(this.readyState === 4 && this.status === 401){
-
+              
             }
           }
           xhttp.open('POST','/login',true);
