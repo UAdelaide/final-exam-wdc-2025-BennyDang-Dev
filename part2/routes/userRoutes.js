@@ -97,7 +97,7 @@ router.post('/getOwnerIDs', async (req,res) => {
     WHERE U.username IN ( ? );
     `;
   try {
-    const [rows] = db.execute(query,[usernames]);
+    const [rows] = await db.execute(query,[usernames]);
     res.json(rows);
   }catch(error){
     res.status(500).json({ error: 'Can\' get user ids!' });
