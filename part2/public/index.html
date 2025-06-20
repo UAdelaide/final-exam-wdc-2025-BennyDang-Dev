@@ -56,9 +56,8 @@
         <td>{{ dog.name }}</td>
         <td>{{ dog.size }}</td>
         <td>{{ dogTableObj.NameIDMap[dog.owner_username] }}</td>
-        <td><img :src="dogTableObj.ima" alt="Image of Doggo"></td>
+        <td><img :src="dogTableObj.imageURLs[index]" alt="Image of Doggo"></td>
       </tr>
-
     </tbody>
    </table>
     <!--<a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
