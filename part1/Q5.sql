@@ -13,4 +13,4 @@ INSERT INTO Dogs ( owner_id, name, size ) VALUES
     ( (SELECT owner_ud FROM Users WHERE username = '...' LIMIT 1), '', '' ),
     ( (SELECT owner_ud FROM Users WHERE username = '...' LIMIT 1), '', '' );
 
-INSERT INTO WalkRequests ( dog_id, requested_time,  )
+INSERT INTO WalkRequests ( dog_id, requested_time, duration_minutes, location, status ) 
