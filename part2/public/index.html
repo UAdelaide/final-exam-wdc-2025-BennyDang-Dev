@@ -16,7 +16,7 @@
    <form>
       <div class="form-group">
         <label>Username</label>
-        <input type="email" class="form-control" placeholder="Enter Email" v-model="username">
+        <input type="username" class="form-control" placeholder="Enter Email" v-model="username">
       </div>
       <br>
       <div class="form-group">
@@ -47,7 +47,8 @@
           xhttp.setRequestHeader('Content-type','application/json');
           xhttp.open('POST','/login',true);
           xhttp.send(JSON.stringify({
-            
+            username: username,
+            password: password
           }))
         }
       }
