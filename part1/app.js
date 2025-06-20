@@ -191,7 +191,11 @@ let db;
 // * Testing querries can be found Q6-8.sql
 
 app.get('/api/walkrequests/open',async(req,res) => {
-    
+    try {
+
+    }catch{
+        res.status(500).send();
+    }
 })
 
 // ? Maybe we should select a list of walker user names
