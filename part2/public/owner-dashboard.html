@@ -158,9 +158,11 @@
         fetchDogs() {
           const component = this;
           xhttp.onreadystatechange = function {
+            if(this.readyState === 4)
 
           }
-          xhttp.open('GET','/api/')
+          xhttp.open('GET','/api/walks/getOwnerDogs',true);
+          xhttp.send();
         }
       }
     }).mount('#app');
