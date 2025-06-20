@@ -42,4 +42,7 @@ FROM WalkRequests WR
 INNER JOIN Dogs D ON WR.dog_id = D.dog_id
 INNER JOIN Users U ON D.owner_id = U.user_id;
 
-SELECT
+SELECT user_id
+
+
+WHERE 
