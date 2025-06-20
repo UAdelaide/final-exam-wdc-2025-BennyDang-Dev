@@ -98,7 +98,7 @@ router.post('/getOwnerIDs', async (req,res) => {
     `;
   try {
     const [rows] = db.execute(query,[usernames]);
-    
+    const rowObj 
   }catch(error){
 
   }
