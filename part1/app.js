@@ -223,14 +223,10 @@ app.get('/api/walkers/summary', async(req,res) => {
         `);
         const ratings = rows[0].ratings;
 
-        /*
         const resObj = {};
         for(let i=0; i<usernames.length; i++){
-
+            
         }
-        */
-       let tempObj = {name: 2};
-       console.log(tempObj['name2']);
 
     }catch(error){
         res.status(500).send('A problem occurred!');
