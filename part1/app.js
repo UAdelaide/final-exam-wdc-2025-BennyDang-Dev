@@ -27,10 +27,10 @@ let db;
         });
         // * Start with a fresh database of DogWalkService
         await connection.query('SOURCE dogwalks.sql');
-
-
     }catch(error){
         process.stdout.write('A problem occurred when connecting to db! /n ');
+        process.stdout.console.error();
+        
     }
 })();
 
