@@ -174,8 +174,9 @@ app.get('/api/walkers/summary', async(req,res) => {
         SELECT JSON_ARRAYAGG(username) AS usernames
         FROM Users
         WHERE role = 'walker';
-        `);
+    `);
     console.log(rows[0]);
+    res.send()
 });
 
 app.use('/', indexRouter);
