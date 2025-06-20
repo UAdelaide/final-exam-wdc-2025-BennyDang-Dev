@@ -10,12 +10,14 @@
         const app = Vue.createApp({
             data(){
                 return {
-
+                    imageURL: ""
                 }
             },
             method: {
                 async getDogImage(){
-                    const res = await fetch('https://dog.ceo/api/breeds/image/random')
+                    const res = await fetch('https://dog.ceo/api/breeds/image/random');
+                    const result = await res.json();
+                    this.
                 }
             }
 
