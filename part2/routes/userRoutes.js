@@ -47,9 +47,14 @@ router.post('/login', async (req, res) => {
 });
 
 router.get('logout',(req,res) => {
+  try{
+
+  }catch(error){
+    res.send();
+  }
   req.session.destroy();
   console.log(req.session.user_id);
-  res
+  res.redirect()
 })
 
 // POST a new user (simple signup)
