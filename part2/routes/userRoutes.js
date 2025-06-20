@@ -22,7 +22,7 @@ router.post('/login', async (req, res) => {
       WHERE username = ? AND password_hash = ?
     `, [username, password]);
 
-    console.log(rows);
+    // console.log(rows);
 
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
     if(rowObj.role === 'owner'){
       res.redirect('/owner-dashboard.html');
     }
-    res.redirect('/');
+    res.redirect('/walker-dashboard.html');
 
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
