@@ -136,9 +136,9 @@
             // * We can get a api for each dog or we could get all at once
             // * For multiple, MAX is 50
             const API_URL = 'https://dog.ceo/api/breeds/image/random/';
-            let listLength = dogsData.length + 50;
+            let listLength = dogsData.length;
             const urlLists = [];
-            while(listLength > 50){
+            while(listLength > 0){
               res = await fetch('https://dog.ceo/api/breeds/image/random/50');
               result = await res.json();
               // * Test if status is success
