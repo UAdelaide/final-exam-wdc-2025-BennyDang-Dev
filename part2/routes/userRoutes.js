@@ -22,11 +22,11 @@ router.post('/login', async (req, res) => {
       WHERE email = ? AND password_hash = ?
     `, [email, password]);
 
+    console.log(rows);
+
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
-
-    console.log(rows);
 
     res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
