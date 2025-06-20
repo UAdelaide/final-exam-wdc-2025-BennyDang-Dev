@@ -34,16 +34,16 @@ INSERT INTO WalkApplications ( request_id, walker_id, status ) VALUES
     ( 4, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
     ( 5, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
     ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
-    ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
-    ( 7, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'pending'),
-    ( 8, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'pending');
+    ( 7, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
+    ( 8, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'pending'),
+    ( 9, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'pending');
 
 INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments ) VALUES
     ( 2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 1 , 5 , 'some comments'),
     ( 3, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 3 , 4 , 'some comments'),
     ( 4, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 4 , 3 , ''),
     ( 5, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 4 , 5 , ''),
-    ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 1 , 5 , '');
+    ( 7, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 1 , 5 , '');
 
 -- * Some Test Querries
 
