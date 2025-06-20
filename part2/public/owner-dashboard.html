@@ -105,7 +105,10 @@
             const result = await res.json();
 
             // * If result is not ok (200) then we throw error
-            if(!result.ok) throw new Error(result.error);
+            if(!result.ok){
+              throw new Error(result.error);
+              console.log(true);
+            }
             dogObj.value = result;
 
           }catch(error){
