@@ -69,6 +69,7 @@ app.get("/index.html",(req,res, next) => {
     }
 });
 
+// * Imported from part1 as both 
 app.get('/api/dogs', async (req,res) => {
     try {
         const [rows] = await db.execute(`
