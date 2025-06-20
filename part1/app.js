@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
         `);
 
-        // * Creating Dogs table if not exists
+        // * Create Dogs table if not exists
         await db.execute(`
             CREATE TABLE IF NOT EXISTS Dogs (
                 dog_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -48,6 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
                 FOREIGN KEY (owner_id) REFERENCES Users(user_id));
         `);
 
+        // * Create WalkRequests Table if not exists
         await db.execute(`
             CREATE TABLE IF NOT EXISTS WalkRequests (
                 request_id INT AUTO_INCREMENT PRIMARY KEY,
