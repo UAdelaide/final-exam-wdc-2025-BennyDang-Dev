@@ -107,7 +107,6 @@
             // * If result is not ok (200) then we throw error
             if(!result.ok) throw new Error(result.error);
             dogObj.value = result;
-            error.value = '';
 
           }catch(error){
             error.value = error.message
