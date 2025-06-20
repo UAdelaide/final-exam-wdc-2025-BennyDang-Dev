@@ -27,7 +27,7 @@
             <label class="form-label">Select Your Dog</label>
             <!-- ! On FireFox / Zen Browser it won't actually display < -- Choose a dog -- > but Safari does -->
             <!-- * &ndash; for endash -->
-            <select v-model="form.dog_id">
+            <select v-model="form.dog_id" class="form-control">
               <option disabled value="">&ndash;&ndash; Choose a dog &ndash;&ndash;</option>
               <option v-for="dog in dogObj" :value="dog.dog_id">{{ dog.name }}</option>
             </select>
