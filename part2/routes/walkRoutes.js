@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// * Getting all the requests made by the owner, order by date DESC
+// * Getting all the requests made by the owner, order by request time DESC
 // * Kind of an aux thing since this is not specified in the exam
 router.get('/ownerRequests', async (req, res) => {
   const { userid } = req.session;
