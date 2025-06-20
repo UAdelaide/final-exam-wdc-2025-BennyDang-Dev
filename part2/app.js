@@ -17,13 +17,11 @@ app.use(session({
 }));
 
 app.get("/index.html",(req,res, next) => {
-    let { authenticated, role } = req.session;
-    authenticated = true;
-    role = "owner";
+    const { authenticated, role } = req.session;
     if(authenticated){
        if(role === "owner"){
         res.redirect(301,"/owner-dashboard.html");
-       }
+       }else if (role === "walker")
     }else{
         next();
     }
