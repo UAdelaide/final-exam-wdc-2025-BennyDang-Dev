@@ -101,7 +101,7 @@ router.post('/getOwnerIDs', async (req,res) => {
     // * Only reason I know this was this was the only method I used in the wdc project
     db.pool.getConnection(function(err1,connection){
       if(err1){
-        return;
+        res.status(500).json(err)
       }
       connection.query(query,[usernames],function(err2,rows,fields){
         connection.release();
