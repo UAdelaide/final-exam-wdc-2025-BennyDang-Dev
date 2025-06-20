@@ -35,9 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
                 password_hash VARCHAR(255) NOT NULL,
                 role ENUM('owner', 'walker') NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
-                `
-        );
-
+        `);
+        // * Insert records into Users table if table if empty
         const [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Users`);
         if(rows[0].count === 0){
             await db.execute
