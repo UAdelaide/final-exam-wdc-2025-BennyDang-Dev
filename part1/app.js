@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
             password: '',
             database: 'DogWalkService'
         });
-        
+        await db.execute(``);
 
     }catch(error){
         process.stdout.write('Check that DogWalkService DB Exist! \n ');
