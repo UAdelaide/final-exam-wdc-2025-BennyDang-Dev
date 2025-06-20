@@ -58,7 +58,8 @@
           // * To their dashboard
           xhttp.onreadystatechange = function() {
             if(this.readyState === 4){
-              if(this.status === 401 ){
+              // * Handling login error
+              if(this.status === 401 || this.status === 500){
                 component.error = JSON.parse(this.response).error;
                 component.invalid = true;
               }else if (this.status === 301){
