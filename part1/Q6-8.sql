@@ -27,7 +27,7 @@ INSERT INTO WalkRequests ( dog_id, requested_time, duration_minutes, location, s
 
 INSERT INTO WalkApplications ( request_id, walker_id, status ) VALUES
     ( 1, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
-    ( 2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
+    ( 2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
     ( 3, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
     ( 4, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
     ( 5, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
