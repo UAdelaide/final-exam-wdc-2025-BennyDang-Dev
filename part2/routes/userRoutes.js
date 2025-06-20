@@ -50,7 +50,7 @@ router.post('/login', async (req, res) => {
 router.get('/logout',(req,res) => {
   try{
     req.session.destroy();
-    res.redirect(301,'/index.html');
+    //res.redirect(301,'/index.html');
     // res.status(301).json({ url: "index.html" });
   }catch(error){
     // * Do nothing if it cant logout
