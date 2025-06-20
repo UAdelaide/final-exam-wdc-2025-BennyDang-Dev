@@ -50,7 +50,7 @@ router.get('/logout',(req,res) => {
   try{
     req.session.destroy();
     console.log(req.session.user_id);
-    res.redirect(301,"/index.html");
+    res.status(301).json({ url: "index.html" });
   }catch(error){
     // * Do nothing if it cant logout
     // * For some reasons
