@@ -139,7 +139,7 @@
             let listLength = dogsData.length;
             const urlLists = [];
             while(listLength > 0){
-              res = await fetch('https://dog.ceo/api/breeds/image/random/50');
+              res = await fetch('https://dog.ceo/api/breeds/image/random/'+listLength);
               result = await res.json();
               // * Test if status is success
               if(result.status === "success" || result.ok){
