@@ -14,9 +14,6 @@
         .container > h1 {
             justify-content: left;
         }
-        .container > img {
-            justify-content: right;
-        }
     </style>
 
 </head>
@@ -41,10 +38,9 @@
                 };
             },
             beforeMount(){
-                console.log(this.test);
                 this.getDogImage();
             },
-            method: {
+            methods: {
                 async getDogImage() {
                     console.log(true);
                     const res = await fetch('https://dog.ceo/api/breeds/image/random');
