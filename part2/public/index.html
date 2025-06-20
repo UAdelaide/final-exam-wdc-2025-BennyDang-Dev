@@ -60,6 +60,7 @@
                 component.error = JSON.parse(this.response).error;
                 component.invalid = true;
               }else if (this.status === 301){
+                // * Direct to user dashboard page ( owner / walker )
                 window.location.href = JSON.parse(this.response).url;
               }
             }
