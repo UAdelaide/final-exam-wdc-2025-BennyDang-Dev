@@ -41,6 +41,8 @@ app.get("/owner-dashboard.html",(req,res, next) => {
         next();
        }
     }
+    // * if not intended user, will be redirected to index.html
+    // * If walker try to access to 
     res.redirect(301,"/index.html");
 });
 
