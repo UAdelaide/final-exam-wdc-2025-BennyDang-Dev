@@ -62,7 +62,8 @@
         <td>{{ dog.size }}</td>
         <td>{{ dogTableObj.NameIDMap[dog.owner_username] }}</td>
         <!-- ! v-bind src - valid but validator just being picky -->
-        <td><img :src="dogTableObj.imageURLs[index]" alt="Image of Doggo" class="img-fluid" style="max-width: 200px;max-height: 200px;"/></td>
+        <!-- ! Hard coding max image size to prevent overflow -->
+        <td><img :src="dogTableObj.imageURLs[index]" alt="Image of Doggo" class="img-responsive" style="max-width: 200px;max-height: 200px;"/></td>
       </tr>
     </tbody>
    </table>
