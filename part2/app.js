@@ -18,7 +18,9 @@ app.use(session({
 
 app.get("/index.html",(req,res) => {
     const { authenticated, role } = req.session;
-    if(authenticated)
+    if(authenticated){
+        console.log(true);
+    }
 });
 
 // Middleware
