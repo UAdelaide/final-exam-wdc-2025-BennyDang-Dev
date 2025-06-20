@@ -16,7 +16,16 @@ app.use(session({
     cookie: { secure: false }
 }));
 
-app.get("/")
+app.get("/walker-dashboard.html", (req,res,next) => {
+    const { authenticated, role } = req.session;
+    if(authenticated){
+       if(role === ""){
+        next();
+       }
+    }else{
+        res.redirect(301,"/index.html");
+    }
+})
 
 app.get("/owner-dashboard.html",(req,res, next) => {
     const { authenticated, role } = req.session;
