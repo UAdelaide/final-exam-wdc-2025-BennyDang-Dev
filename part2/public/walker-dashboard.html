@@ -64,7 +64,7 @@
         async function loadWalkRequests() {
           try {
             const res = await fetch('/api/walks');
-            if (!res.ok) throw new Error('Failed to load walk requests');
+            if (!res.ok) throw new Error('');
             walks.value = await res.json();
           } catch (err) {
             error.value = err.message;
