@@ -152,7 +152,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         if(rows[0].count === 0){
             await db.execute(`
                 INSERT INTO WalkRequests (request_id, walker_id, owner_id, rating, comments ) VALUES
-                    ( (SELECT user_id FROM users WHERE username = 'bobwalker'),  ,),
+                    ( 2, (SELECT user_id FROM users WHERE username = 'bobwalker'),  ,),
                     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Bella' LIMIT 1), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted' ),
                     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Belfort' LIMIT 1), '2025-06-15 08:30:00', 60, 'Versailles', 'open' ),
                     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Lupin' LIMIT 1), '2025-06-15 09:00:00', 30, 'Versailles', 'accepted' ),
