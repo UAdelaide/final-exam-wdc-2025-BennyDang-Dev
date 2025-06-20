@@ -29,7 +29,7 @@ INSERT INTO WalkApplications ( request_id, walker_id, status ) VALUES
     ( 1, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
     ( 2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
     ( 3, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
-    ( 4, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
+    ( 4, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
     ( 5, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
     ( 6, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
     ( 7, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
