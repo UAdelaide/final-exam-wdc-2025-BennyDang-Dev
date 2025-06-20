@@ -196,7 +196,7 @@ app.get('/api/walkers/summary', async(req,res) => {
         FROM Users
         WHERE role = 'walker';
     `);
-    console.log(rows[0]);
+    console.log(rows[0].usernames);
     res.send();
 });
 
