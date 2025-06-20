@@ -191,7 +191,7 @@ let db;
 // * Testing querries can be found Q6-8.sql
 
 // ? Maybe we should select a list of walker user names
-// ? Then have two querries selecting completed walks and ratings that is mapped based on username -> object
+// ? Then have two querries selecting completed walks and ratings that is mapped based on username
 // ? We can then process it by looping through the usernames
 app.get('/api/walkers/summary', async(req,res) => {
     try {
@@ -222,6 +222,9 @@ app.get('/api/walkers/summary', async(req,res) => {
                     GROUP BY U.username) AS SQ;
         `);
         const ratings = rows[0].ratings;
+
+        for(let i=0; i<user)
+
     }catch(error){
         res.status(500).send('A problem occurred!');
     }
