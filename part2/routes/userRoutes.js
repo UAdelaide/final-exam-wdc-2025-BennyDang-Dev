@@ -3,7 +3,9 @@ const router = express.Router();
 const db = require('../models/db');
 
 
-router.get('/login')
+router.post('/login',async (req,res) => {
+  const 
+});
 
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
