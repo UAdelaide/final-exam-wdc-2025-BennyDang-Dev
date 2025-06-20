@@ -170,7 +170,7 @@ let db;
 // * Testing querries can be found Q6-8.sql
 
 app.get('/api/dogs', async(req,res) => {
-
+    const result = 
 });
 
 app.use('/', indexRouter);
