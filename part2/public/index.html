@@ -40,7 +40,7 @@
     <!-- * Dog ID is just the row id as the query should return them based on addition anyways -->
     <!-- * Use set to store the user names -->
    <h1 class="mb-4">All Registered Dogs</h1>
-   <table class="table table-stripped">
+   <table class="table table-stripped" v-if="gotData">
     <thead>
       <tr>
         <th scope="col">Dog ID</th>
@@ -74,7 +74,8 @@
           username: "",
           password: "",
           invalid: false,
-          error: ""
+          error: "",
+          gotData: 
         };
       },
       methods: {
