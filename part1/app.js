@@ -26,7 +26,7 @@ let db;
             password: '',
             database: 'DogWalkService'
         });
-        await connection.
+        await c
     }catch(error){
         process.stdout.write('Check that DogWalkService DB Exist! \n ');
         console.error(error);
