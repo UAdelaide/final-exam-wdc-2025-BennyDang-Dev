@@ -21,7 +21,9 @@ app.get("/index.html",(req,res, next) => {
     if(authenticated){
        if(role === "owner"){
         res.redirect(301,"/owner-dashboard.html");
-       }else if (role === "walker")
+       }else if (role === "walker"){
+        res.redirect(301,"/waker-dashboard.html");
+       }
     }else{
         next();
     }
