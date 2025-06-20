@@ -24,7 +24,9 @@ app.use(session({
     cookie: { secure: false }
 }));
 
-app.get("/index.html",)
+app.get("/index.html",(req,res) => {
+    
+})
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
