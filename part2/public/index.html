@@ -44,7 +44,8 @@
       methods: {
         LogIn() {
           const xhttp = new XMLHttpRequest();
-          xhttp.setRequestHeader
+          xhttp.setRequestHeader('Content-type','application/json');
+          xhttp.open('POST','/login')
         }
       }
     }).mount('#app');
