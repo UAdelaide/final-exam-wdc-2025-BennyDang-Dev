@@ -18,9 +18,11 @@
         <label>Username</label><br>
         <input type="email" class="form-control" placeholder="Enter Email" v-model="username"><br>
       </div>
+      <div>
+        <label>Password</label><br>
+        <input type="password" v-model="password"><br>
+      </div>
 
-      <label>Password</label><br>
-      <input type="password" v-model="password"><br>
    </form>
    <br>
    <button type="button" @click="LogIn" class="btn btn-primary">Log In</button>
