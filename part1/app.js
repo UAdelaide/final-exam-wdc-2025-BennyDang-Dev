@@ -34,7 +34,10 @@ app.use(express.static(path.join(__dirname, 'public')));
                 role ENUM('owner', 'walker') NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);`
         );
-        const [rows] = await db.execute(`SELECT COUNT(*) AS`)
+        const [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Users`);
+        if(rows[0].count === 0){
+            await db.execute
+        }
 
     }catch(error){
         process.stdout.write('Check that DogWalkService DB Exist! \n ');
