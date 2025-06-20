@@ -133,7 +133,11 @@
           submitWalkRequest
         };
       },
-      data() 
+      data() {
+        return {
+
+        }
+      },
       // * Function for logging out
       methods: {
         LogOut(){
@@ -148,6 +152,11 @@
           }
           xhttp.open("GET","/api/users/logout",true);
           xhttp.send();
+        },
+        // * We can fetch dogs name associated with a dog_id that we can
+        // * Used to display the dog name while selecting will get the dog id
+        fetchDogs() {
+          
         }
       }
     }).mount('#app');
