@@ -80,6 +80,7 @@
           dogTableObj: {}
         };
       },
+      before
       methods: {
         LogIn() {
           // * Saving parent vue pointer
@@ -114,8 +115,9 @@
             // * Get UserData
             const userSET = new Set();
             dogsData.forEach(element => {
-              userSET.add(element.owner_username)
+              userSET.add(element.owner_username);
             });
+            console.log(userSET);
 
           }
 
