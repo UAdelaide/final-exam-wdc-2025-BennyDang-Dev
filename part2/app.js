@@ -28,7 +28,9 @@ app.get("/index.html",(req,res) => {
     const { authenticated, role } = req.session;
     if(authenticated){
         if(role === "owner"){
-            res.redirect(300,'/')
+            res.redirect(301,'/owner-dashboard.html');
+        }else{
+            res.redirect(301,'/')
         }
     }
 })
