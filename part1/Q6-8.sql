@@ -33,8 +33,8 @@ INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments ) VAL
 
 -- * Some Test Querries
 
-SELECT name, size, U.username
+SELECT name AS dog_name, size, U.username AS owner_username
 FROM Dogs D
 INNER JOIN Users U ON D.owner_id = U.user_id;
 
-SELECT request_id, DOGNAME, requested_time, duration_minutes, 
+SELECT request_id, DOGNAME, requested_time, duration_minutes,
