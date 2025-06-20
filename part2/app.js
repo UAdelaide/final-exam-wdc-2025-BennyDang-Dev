@@ -6,6 +6,10 @@ require('dotenv').config();
 
 const app = express();
 
+// Middleware
+app.use(express.json());
+app.use(logger('dev'));
+
 app.use(session({
     // * Generated randomly from https://random.org
     secret: 'hZsUxpJ4B8PUNYfHKcDHwf5TJsm2mUZe', // Used to COMPUTE HASH
@@ -57,9 +61,6 @@ app.get("/index.html",(req,res, next) => {
     }
 });
 
-
-// Middleware
-app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Routes
