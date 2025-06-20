@@ -16,6 +16,7 @@ app.use(session({
     cookie: { secure: false }
 }));
 
+// * Checking if they have permission
 app.get("/walker-dashboard.html", (req,res,next) => {
     const { authenticated, role } = req.session;
     if(authenticated){
@@ -27,6 +28,7 @@ app.get("/walker-dashboard.html", (req,res,next) => {
     }
 });
 
+// * Checking if they have permission
 app.get("/owner-dashboard.html",(req,res, next) => {
     const { authenticated, role } = req.session;
     if(authenticated){
