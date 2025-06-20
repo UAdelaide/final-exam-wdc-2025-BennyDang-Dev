@@ -87,6 +87,20 @@
           error,
           applyToWalk
         };
+      },
+      methods: {
+        LogOut(){
+          const xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function(){
+            if(this.readyState === 4){
+              if(this.status === 301){
+                window.location.href = JSON.parse(this.response).url;
+              }
+            }
+          }
+          xhttp.open("GET","/api/users/logout",true);
+          xhttp.send();
+        }
       }
     }).mount('#app');
   </script>
