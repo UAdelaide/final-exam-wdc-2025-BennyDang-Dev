@@ -30,14 +30,13 @@ router.post('/login', async (req, res) => {
 
     const rowObj = rows[0];
     if(rowObj.role === 'owner'){
-      res.render('/owner-dashboard.html');
+      res.render('owner-dashboard.html');
     }else{
-      res.render('/walker-dashboard.html');
+      res.render('walker-dashboard.html');
     }
 
 
   } catch (error) {
-    throw error;
     res.status(500).json({ error: 'Login failed' });
   }
 });
