@@ -91,6 +91,7 @@ router.get('/me', (req, res) => {
 router.post('/getOwnerIDs', async (req,res) => {
   // * Is array
   const { usernames } = req.body;
+  console.log(usernames);
   // const usernames = ['alice123','bobwalker'];
   const query = `
     SELECT JSON_OBJECTAGG(username, user_id) AS userIDs
