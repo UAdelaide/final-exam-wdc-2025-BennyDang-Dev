@@ -223,7 +223,9 @@ app.get('/api/walkers/summary', async(req,res) => {
         `);
         const ratings = rows[0].ratings;
 
-        for(let i=0; i<user)
+        for(let i=0; i<usernames.length; i++){
+            
+        }
 
     }catch(error){
         res.status(500).send('A problem occurred!');
