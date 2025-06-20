@@ -146,6 +146,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         }
 
         // * Insert records into WalkRatings table if table is empty
+        // * 
         [rows] = await db.execute(`SELECT COUNT(*) AS count FROM WalkRatings`);
         if(rows[0].count === 0){
             await db.execute(`
