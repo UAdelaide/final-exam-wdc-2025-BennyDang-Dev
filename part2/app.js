@@ -33,10 +33,11 @@ app.get("/",(req,res, next) => {
         res.redirect(301,"/walker-dashboard.html");
        }
     }else{
-        
+        res.redirect(301,'/index.html')
     }
 });
 
+/*
 // * Checking if they have permission
 app.get("/walker-dashboard.html", (req,res,next) => {
     const { authenticated, role } = req.session;
@@ -62,6 +63,7 @@ app.get("/owner-dashboard.html",(req,res, next) => {
     // * If walker try to access to owner, they will be redirected to their dashboard
     res.redirect(301,"/index.html");
 });
+*/
 
 app.use(express.static(path.join(__dirname, '/public')));
 
