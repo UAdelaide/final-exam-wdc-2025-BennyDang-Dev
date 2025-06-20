@@ -114,8 +114,9 @@
             // * Get Dogs Data
             const res = await fetch('/api/dogs');
             const result = await res.json();
-            if(!res.ok) throw new Error(result.error)
+            if(!res.ok) throw new Error('Error get data from /api/dogs')
             const dogsData = result;
+
             // * Get UserData
             const userSET = new Set();
             dogsData.forEach(element => {
