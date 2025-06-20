@@ -197,8 +197,9 @@ app.get('/api/walkers/summary', async(req,res) => {
            FROM Users
            WHERE role = 'walker';
         `);
+    throw new Error();
     }catch(error){
-        res.sendStatus(500).send(er);
+        res.sendStatus(500).send('A problem occurred!');
     }
 
 });
