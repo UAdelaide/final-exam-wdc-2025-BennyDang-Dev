@@ -24,9 +24,11 @@ let db;
             host: 'localhost',
             user: 'root',
             password: ''
-        })
-    }catch(error){
+        });
         
+
+    }catch(error){
+
     }
 })
 
