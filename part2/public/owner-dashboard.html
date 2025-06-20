@@ -104,8 +104,8 @@
             const res = await fetch('/api/walks/getOwnerDogs');
             const result = await res.json();
 
-            // * If res
-            if(!res.ok) throw new Error(result.error);
+            // * If result is not ok (200) then we throw error
+            if(!result.ok) throw new Error(result.error);
             dogObj.value = result;
 
           }catch(error){
