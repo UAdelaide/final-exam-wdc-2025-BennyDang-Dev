@@ -79,9 +79,9 @@ GROUP BY U.username;
 -- * Maybe we should select a list of walker user names
 -- * Then have two querries selecting completed walks and ratings that is mapped based on username -> object
 -- * We can then process it by looping through the usernames
-SELECT JSON_
+SELECT JSON_OBJECTAGG(SQ.username, SQ.completed_walks)
 FROM
-    (SELECT U.username, COUNT(walker_id)
+    (SELECT U.username AS username, COUNT(walker_id) AS completed_walks
     FROM WalkApplications WA
     INNER JOIN WalkRequests WR ON WA.request_id = WR.request_id
     INNER JOIN Users U on WA.walker_id = U.user_id
