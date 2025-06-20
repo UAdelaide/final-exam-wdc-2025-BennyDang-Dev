@@ -130,7 +130,9 @@
       methods: {
         logOut(){
           const xhttp = new XMLHttpRequest();
-          xhttp.open("GET","/api/users/")
+          xhttp.onreadystatechange = function()
+          xhttp.open("GET","/api/users/logout",true);
+          xhttp.send();
         }
       }
     }).mount('#app');
