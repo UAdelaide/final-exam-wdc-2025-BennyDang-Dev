@@ -30,9 +30,9 @@ let db;
 
     }catch(error){
         process.stdout.write('A problem occurred when connecting to db! /n ');
-        
+
     }
-})
+}());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
