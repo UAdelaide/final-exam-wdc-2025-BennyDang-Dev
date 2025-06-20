@@ -38,7 +38,9 @@ app.get("/owner-dashboard.html",(req,res, next) => {
     }
 });
 
-// * If they access index.html then 
+// * If they access index.html then if the session is active
+// * They will be redirected to their dashboard without having to
+// * re login
 app.get("/index.html",(req,res, next) => {
     const { authenticated, role } = req.session;
     if(authenticated){
