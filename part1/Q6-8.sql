@@ -72,3 +72,5 @@ WHERE WA.status = 'accepted' AND WR.status = 'completed'
 GROUP BY U.username;
 
 SELECT U.usernmae COUNT(walker_id) AS total_ratings
+FROM WalkRatings WR
+INNER JOIN Users U
