@@ -32,7 +32,8 @@
     </main>
 
     <script>
-        const app = Vue.createApp({
+        const { createApp } = Vue;
+        createApp({
             data(){
                 return {
                     test: "hello",
