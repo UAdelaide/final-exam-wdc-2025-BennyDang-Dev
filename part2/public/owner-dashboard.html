@@ -104,7 +104,9 @@
             const res = await fetch('/api/walks/getOwnerDogs');
             console.log(res.json());
             dogObj.value = await res.json();
-          }catch(error)
+          }catch(error){
+            error.value = 
+          }
         }
 
         async function submitWalkRequest() {
