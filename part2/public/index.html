@@ -43,7 +43,7 @@
    <h1 class="mb-4">All Registered Dogs</h1>
    <!-- * Error Alerting -->
    <div class="alert alert-danger" v-if="invalid">
-    {{ loginError }}
+    {{ error }}
    </div>
    <table class="table table-stripped" v-if="gotData">
     <thead>
@@ -88,7 +88,8 @@
             dogsData: {},
             NameIDMap: {},
             imageURLs: []
-          }
+          },
+          dataError: false
         };
       },
       beforeMount(){
