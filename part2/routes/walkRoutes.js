@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.post('/',)
+router.post('/fetch',)
 
 // POST an application to walk a dog (from walker)
 router.post('/:id/apply', async (req, res) => {
