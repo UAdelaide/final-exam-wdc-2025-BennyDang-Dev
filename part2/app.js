@@ -21,23 +21,6 @@ app.use(session({
     cookie: { secure: false }
 }));
 
-// * If they access index.html then if the session is active
-// * They will be redirected to their dashboard without having to
-// * re login
-app.get("/",(req,res, next) => {
-    const { authenticated, role } = req.session;
-    if(authenticated){
-       if(role === "owner"){
-        res.redirect(301,"/owner-dashboard.html");
-       }else if (role === "walker"){
-        res.redirect(301,"/walker-dashboard.html");
-       }
-    }else{
-        res.redirect(301,'/index.html');
-    }
-});
-
-/*
 // * Checking if they have permission
 app.get("/walker-dashboard.html", (req,res,next) => {
     const { authenticated, role } = req.session;
@@ -63,7 +46,22 @@ app.get("/owner-dashboard.html",(req,res, next) => {
     // * If walker try to access to owner, they will be redirected to their dashboard
     res.redirect(301,"/index.html");
 });
-*/
+
+// * If they access index.html then if the session is active
+// * They will be redirected to their dashboard without having to
+// * re login
+app.get("/",(req,res, next) => {
+    const { authenticated, role } = req.session;
+    if(authenticated){
+       if(role === "owner"){
+        res.redirect(301,"/owner-dashboard.html");
+       }else if (role === "walker"){
+        res.redirect(301,"/walker-dashboard.html");
+       }
+    }else{
+        next();
+    }
+});
 
 app.use(express.static(path.join(__dirname, '/public')));
 
