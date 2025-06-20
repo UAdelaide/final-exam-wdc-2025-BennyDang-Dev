@@ -48,11 +48,13 @@ router.post('/login', async (req, res) => {
 
 router.get('logout',(req,res) => {
   try{
-
+    req.session.destroy();
   }catch(error){
-    res.send();
+    // * Do nothing if it cant logout
+    // * For some reasons
+    res.sendStatus(500);
   }
-  req.session.destroy();
+
   console.log(req.session.user_id);
   res.redirect()
 })
