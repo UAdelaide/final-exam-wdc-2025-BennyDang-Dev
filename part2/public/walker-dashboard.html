@@ -53,8 +53,9 @@
         async function getCurrentUser(){
           try{
             const res = await fetch('/api/users/me');
-            if(!res.ok) throw new Error('Failed to get walker id!');
             const result = res.json;
+            if(!res.ok) throw new Error('Failed to get walker id!');
+
             user = result.userid;
           }catch(err){
             error.value = err.message;
@@ -64,7 +65,7 @@
         async function loadWalkRequests() {
           try {
             const res = await fetch('/api/walks');
-            if (!res.ok) throw new Error('');
+            if (!res.ok) throw new Error('Failed to load walk requests');
             walks.value = await res.json();
           } catch (err) {
             error.value = err.message;
