@@ -16,13 +16,16 @@ app.use(session({
     cookie: { secure: false }
 }));
 
-app.get("/index.html",(req,res) => {
+app.get("/index.html",(req,res, next) => {
     const { authenticated, role } = req.session;
     if(authenticated){
-        console.log(true);
+       if
+    }else{
+        next();
     }
-    
 });
+
+
 
 // Middleware
 app.use(express.json());
@@ -31,6 +34,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
+const { nextTick } = require('process');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
