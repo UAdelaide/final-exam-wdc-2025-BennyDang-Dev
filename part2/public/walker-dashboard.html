@@ -48,14 +48,14 @@
         const message = ref('');
         const error = ref('');
         // const user = 3;
-        let user = ref(null;
+        let user = ref(null);
 
         async function getCurrentUser(){
           try{
             const res = await fetch('/api/users/me');
             const result = res.json();
             if(!res.ok) throw new Error(result.error);
-            user = result.userid;
+            user.value = result.userid;
             console.log(user);
           }catch(err){
             error.value = err.message;
