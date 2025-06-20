@@ -63,8 +63,8 @@
           xhttp.open('POST','/login',true);
           xhttp.setRequestHeader('Content-type','application/json');
           xhttp.send(JSON.stringify({
-            username: username,
-            password: password
+            username: component.username,
+            password: component.password
           }))
         }
       }
