@@ -106,7 +106,6 @@
 
             // * If result is not ok (200) then we throw error
             if(!res.ok){
-              console.log(true);
               throw new Error(result.error);
             }
             dogObj.value = result;
