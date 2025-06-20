@@ -22,7 +22,7 @@ INSERT INTO WalkRequests ( dog_id, requested_time, duration_minutes, location, s
     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Lupin' LIMIT 1), '2025-06-15 09:00:00', 30, 'Versailles', 'accepted' ),
     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Fluke' LIMIT 1), '2025-06-18 09:00:00', 45, 'Fort Funston', 'cancelled' );
 
-DROP Dogs;
+DROP TABLE Dogs;
 CREATE TABLE Dogs (
     dog_id INT AUTO_INCREMENT PRIMARY KEY,
     owner_id INT NOT NULL,
