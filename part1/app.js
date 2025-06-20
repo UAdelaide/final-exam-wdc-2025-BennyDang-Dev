@@ -217,7 +217,7 @@ app.get('/api/walkers/summary', async(req,res) => {
         [rows] = await db.execute(`
             SELECT JSON_OBJECTAGG(SQ.username, JSON_OBJECT('total_ratings', SQ.total_ratings, 'average_rating', SQ.average_rating)) AS ratings
                 FROM
-                    (SELECT U.username, COUNT(walker_id) AS total_ratings, ROUND(AVG(rating),1) AS average_rating
+                    (SELECT U.username, COUNT(walker_id) AS total_ratings, ROUND(AVG(rating),2) AS average_rating
                     FROM WalkRatings WR
                     INNER JOIN Users U ON WR.walker_id = U.user_id
                     GROUP BY U.username) AS SQ;
