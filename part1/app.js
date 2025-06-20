@@ -161,9 +161,7 @@ let db;
                     ( 4, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
                     ( 5, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
                     ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
-                    ( 7, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
-                    ( 8, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'pending'),
-                    ( 9, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'pending');
+                    ( 7, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted');
             `);
         }
 
