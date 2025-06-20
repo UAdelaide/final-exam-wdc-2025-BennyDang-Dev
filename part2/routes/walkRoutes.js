@@ -36,16 +36,14 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/getOwnerDogs', async (req,res) => {
-  const { user_id } = req.session;
+  const { userid } = req.session;
   const query = `SELECT name, dog_id FROM Dogs WHERE owner_id = ?`;
   try {
-    console.log(user_id)
-    const [rows] = await db.execute(query,user_id);
+    const [rows] = await db.execute(query,userid);
     // res.status(500).json({ error: 'Failed fetching dogs' });
     res.json(rows);
   }catch(error){
     res.status(500).json({ error: 'Error fetching doggos!' });
-    throw(error);
   }
 });
 
