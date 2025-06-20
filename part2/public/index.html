@@ -135,6 +135,7 @@
             });
             result = await res.json();
             if(!res.ok) throw new Error(result.error || 'Error get user ids!');
+            console.log()
             const NameIDMap = result.userIDs;
             this.dogTableObj.NameIDMap = NameIDMap;
 
