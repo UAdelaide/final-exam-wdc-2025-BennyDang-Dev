@@ -55,7 +55,8 @@ INNER JOIN Users U ON D.owner_id = U.user_id;
 SELECT request_id, D.name AS dog_name, requested_time, duration_minutes, location, U.username AS owner_username
 FROM WalkRequests WR
 INNER JOIN Dogs D ON WR.dog_id = D.dog_id
-INNER JOIN Users U ON D.owner_id = U.user_id;
+INNER JOIN Users U ON D.owner_id = U.user_id
+WHERE WR.status = 'open';
 
 -- * Select walkers with walk ratings;
 SELECT U.username AS walker_username, COUNT(WRT.rating_id) AS total_ratings, ROUND(AVG(WRT.rating),1) AS average_rating
