@@ -68,11 +68,16 @@ app.use(express.static(path.join(__dirname, 'public')));
                 status ENUM('open', 'accepted', 'completed', 'cancelled') DEFAULT 'open',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
-            );`
-        );
+            );
+        `);
+
+        await db.execute(`
+            `)
 
 
         }
+
+        
     }catch(error){
         process.stdout.write(`A problem occurred when setting up DB for testing!\n\nCheck that DogWalkService Database Exists!\n\n`);
         console.error(error);
