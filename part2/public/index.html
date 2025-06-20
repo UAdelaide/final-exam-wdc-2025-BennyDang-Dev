@@ -44,13 +44,14 @@
       },
       methods: {
         LogIn() {
+          const compo
           const xhttp = new XMLHttpRequest();
           xhttp.setRequestHeader('Content-type','application/json');
           // * Handling errors as correct credential would redirect the user
           // * To their dashboard
           xhttp.onreadystatechange = function() {
             if(this.readyState === 4 && this.status === 401){
-              
+
             }
           }
           xhttp.open('POST','/login',true);
