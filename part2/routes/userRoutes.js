@@ -91,7 +91,6 @@ router.get('/me', (req, res) => {
 router.post('/getOwnerIDs', async (req,res) => {
   // * Is array
   const { usernames } = req.body;
-  console.log(usernames);
   // const usernames = ['alice123','bobwalker'];
   const query = `
     SELECT JSON_OBJECTAGG(username, user_id) AS userIDs
@@ -109,11 +108,11 @@ router.post('/getOwnerIDs', async (req,res) => {
         if(err2){
           res.status(500).json({ error: 'Error querying the database!' });
         }
+        cons
         res.json(rows);
       });
     });
     // const [rows] = await db.execute(query,[["alice123"]]);
-    // res.json(rows);
   }catch(error){
     res.status(500).json({ error: 'Can\' get user ids!' });
     // console.log(error);
