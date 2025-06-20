@@ -88,7 +88,9 @@ router.get('/me', (req, res) => {
 });
 
 // * Get owner ids for index.html dog tables
-router.post('/getOwnerIDs')
+router.post('/getOwnerIDs',(req,res) => {
+  
+});
 
 
 module.exports = router;
