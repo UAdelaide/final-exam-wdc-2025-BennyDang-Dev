@@ -30,7 +30,7 @@
    <button type="submit" @click="LogIn" class="btn btn-primary">Log In</button>
    <br><br>
    <!-- * Display error: Invalid Credential / Login Error -->
-   <div class="alert alert-danger" v-if="invalid">
+   <div class="alert alert-danger" v-if="dataError">
     {{ loginError }}
    </div>
 
