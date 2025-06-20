@@ -32,9 +32,9 @@ router.get('/ownerRequests', async (req, res) => {
     const [rows] = await db.query(query,[userid]);
     res.json(rows);
   }catch(error){
-    res.status(500).json({ error: 'Failed to fetch walk requests'})
+    res.status(500).json({ error: 'Failed to fetch walk requests' });
   }
-})
+});
 
 // POST a new walk request (from owner)
 router.post('/', async (req, res) => {
