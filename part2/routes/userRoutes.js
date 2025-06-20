@@ -88,7 +88,7 @@ router.get('/me', (req, res) => {
 });
 
 // * Get owner ids for index.html dog tables
-router.post('/getOwnerIDs',(req,res) => {
+router.post('/getOwnerIDs', async (req,res) => {
   // * Is array
   const { usernames } = req.body;
   const query = `
@@ -96,7 +96,11 @@ router.post('/getOwnerIDs',(req,res) => {
     FROM Users U
     WHERE U.username IN ('alice123','bobwalker');
     `;
-  
+  try {
+    const 
+  }catch(error){
+
+  }
 
 });
 
