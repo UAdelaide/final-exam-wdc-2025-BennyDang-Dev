@@ -27,11 +27,13 @@ INSERT INTO WalkRequests ( dog_id, requested_time, duration_minutes, location, s
 
 INSERT INTO WalkApplications ( request_id, walker_id, status ) VALUES
     ( 1, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
-    ( 1, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
-    ( 1, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
-    ( 1, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
-    ( 1, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
-    ( 1, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
+    ( 2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
+    ( 3, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
+    ( 4, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
+    ( 5, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
+    ( 6, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
+    ( 7, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
+    ( 8, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
 
 INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments ) VALUES
     ( 2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 1 , 5 , 'some comments'),
