@@ -226,9 +226,10 @@ app.get('/api/walkers/summary', async(req,res) => {
 
         const resObj = {};
         for(let i=0; i<usernames.length; i++){
+            let tempObj = { walker_username:  }
             let username = usernames[i];
             if(typeof completed_walks[username] !== undefined){
-                
+
             }
         }
 
