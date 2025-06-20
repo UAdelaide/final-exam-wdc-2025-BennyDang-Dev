@@ -112,8 +112,9 @@
         async getDogTableData() {
           try {
             // * Get Dogs Data
-            const res = await fetch('/api/dogs');
-            const result = await res.json();
+            let res, result;
+            res = await fetch('/api/dogs');
+            result = await res.json();
             if(!res.ok) throw new Error('Error get data from /api/dogs!')
             const dogsData = result;
 
@@ -122,8 +123,8 @@
             dogsData.forEach(element => {
               userSET.add(element.owner_username);
             });
-            const r = await fetch('/api/users/getOwnerIDs');
-            const response = await res.json();
+            res = await fetch('/api/users/getOwnerIDs');
+            result = await res.json();
             if(!res.ok) throw new Error(response.error || 'Error get user ids!');
 
 
