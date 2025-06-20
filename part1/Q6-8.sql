@@ -25,7 +25,7 @@ INSERT INTO WalkRequests ( dog_id, requested_time, duration_minutes, location, s
     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Max' LIMIT 1), '2025-06-19 16:00:00', 30, 'Parklands', 'open' ),
     ( (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Fluke' LIMIT 1), '2025-06-19 17:00:00', 45, 'Fort Funston', 'completed' );
 
-INSERT INTO WalkApplications ( )
+INSERT INTO WalkApplications ( request_id,  )
 
 INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments ) VALUES
     ( 2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 1 , 5 , 'some comments'),
