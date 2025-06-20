@@ -58,6 +58,9 @@ app.use(express.static(path.join(__dirname, 'public')));
                 FOREIGN KEY (owner_id) REFERENCES Users(user_id));
         `);
 
+        await db.execute(`
+            
+        `)
 
         }
     }catch(error){
