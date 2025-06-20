@@ -87,7 +87,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         // ? Mostly for formality since none of of our routes make uses
         // ? of the WalkApplications Tables
         await db.execute(`
-            CREATE TABLE WalkApplications (
+            CREATE TABLE IF EXISTS WalkApplications (
                 application_id INT AUTO_INCREMENT PRIMARY KEY,
                 request_id INT NOT NULL,
                 walker_id INT NOT NULL,
