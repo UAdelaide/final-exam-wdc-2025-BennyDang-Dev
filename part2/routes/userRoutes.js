@@ -31,6 +31,8 @@ router.post('/login', async (req, res) => {
     const rowObj = rows[0];
     if(rowObj.role === 'owner'){
       res.redirect(201,'/owner-dashboard.html');
+    }else{
+      
     }
     res.redirect(201,'/walker-dashboard.html');
 
