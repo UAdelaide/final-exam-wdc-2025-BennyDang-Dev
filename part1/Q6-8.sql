@@ -88,4 +88,4 @@ FROM
     WHERE WA.status = 'accepted' AND WR.status = 'completed'
     GROUP BY U.username) AS SQ;
 
-SELECT 
+SELECT JSON_OBJECT
