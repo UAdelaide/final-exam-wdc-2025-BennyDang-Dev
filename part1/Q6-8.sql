@@ -73,4 +73,5 @@ GROUP BY U.username;
 
 SELECT U.usernmae COUNT(walker_id) AS total_ratings
 FROM WalkRatings WR
-INNER JOIN Users U
+INNER JOIN Users U ON WR.walker_id = U.user_id
+GROUP BY U.username;
