@@ -62,7 +62,7 @@
         <td>{{ dog.size }}</td>
         <td>{{ dogTableObj.NameIDMap[dog.owner_username] }}</td>
         <!-- ! v-bind src - valid but validator just being picky -->
-        <td><img :src="dogTableObj.imageURLs[index]" alt="Image of Doggo" /></td>
+        <td><img :src="dogTableObj.imageURLs[index]" alt="Image of Doggo" class=""/></td>
       </tr>
     </tbody>
    </table>
