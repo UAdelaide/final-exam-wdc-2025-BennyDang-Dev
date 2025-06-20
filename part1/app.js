@@ -147,13 +147,13 @@ app.use(express.static(path.join(__dirname, 'public')));
         }
 
         // * Insert records into WalkRatings table if table is empty
-        // * Will Hard Code Request ID
+        // * Will Hard Code Request ID from WalkRequests that has been completed
         [rows] = await db.execute(`SELECT COUNT(*) AS count FROM WalkRatings`);
         if(rows[0].count === 0){
             await db.execute(`
                 INSERT INTO WalkRequests (request_id, walker_id, owner_id, rating, comments ) VALUES
                     ( 2, (SELECT user_id FROM users WHERE username = 'bobwalker'),  ,),
-                    ( 3, (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Bella' LIMIT 1), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted' ),
+                    ( 3, , '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted' ),
                     ( 4, (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Belfort' LIMIT 1), '2025-06-15 08:30:00', 60, 'Versailles', 'open' ),
                     ( 5, (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Lupin' LIMIT 1), '2025-06-15 09:00:00', 30, 'Versailles', 'accepted' ),
                     ( 6, (SELECT dog_id FROM Dogs WHERE Dogs.name = 'Fluke' LIMIT 1), '2025-06-18 09:00:00', 45, 'Fort Funston', 'cancelled' );
