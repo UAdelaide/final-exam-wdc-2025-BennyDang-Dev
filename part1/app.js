@@ -101,7 +101,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
         // ------------------------------------------
         // ! Inserting Records
-        // ? These 
+        // ? These querries can be found in the Q5.sql file
+        // ? Including the one for WalkRatings 
         // ------------------------------------------
         let rows = [];
 
