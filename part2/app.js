@@ -24,16 +24,9 @@ app.use(session({
     cookie: { secure: false }
 }));
 
-app.get("/",(req,res) => {
+app.get("/owner-dashboard.html",(req,res) => {
     const { authenticated, role } = req.session;
-    console.log(authenticated, role);
-    if(authenticated){
-        if(role === "owner"){
-            res.redirect(301,'/owner-dashboard.html');
-        }else{
-            res.redirect(301,'/walker-dashboard.html');
-        }
-    }
+    if
 });
 
 app.use('/api/walks', walkRoutes);
