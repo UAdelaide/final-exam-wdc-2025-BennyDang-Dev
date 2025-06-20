@@ -150,8 +150,6 @@ let db;
             `);
         }
 
-        // * Insert records into WalkRatings table if table is empty
-        // * Will Hard Code Request ID + Owner ID from WalkRequests that has been completed
         [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Applications`);
         if(rows[0].count === 0){
             await db.execute(`
@@ -168,7 +166,9 @@ let db;
             `);
         }
 
-         [rows] = await db.execute(`SELECT COUNT(*) AS count FROM WalkRatings`);
+        // * Insert records into WalkRatings table if table is empty
+        // * Will Hard Code Request ID + Owner ID from WalkRequests that has been completed
+        [rows] = await db.execute(`SELECT COUNT(*) AS count FROM WalkRatings`);
         if(rows[0].count === 0){
             await db.execute(`
                 INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments ) VALUES
