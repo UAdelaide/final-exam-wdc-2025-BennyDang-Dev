@@ -37,4 +37,4 @@ SELECT name, size, U.username
 FROM Dogs D
 INNER JOIN Users U ON D.owner_id = U.user_id;
 
-SELECT
+SELECT request_id, DOGNAME, 
