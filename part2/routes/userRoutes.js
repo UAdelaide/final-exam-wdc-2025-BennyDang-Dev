@@ -101,7 +101,11 @@ router.post('/getOwnerIDs', async (req,res) => {
       if(err1){
         return;
       }
-      connection.query(query,usernames)
+      connection.query(query,usernames,function(err2,rows,fields){
+        if(err2){
+          return;
+        }
+      });
     })
     const [rows] = await db.execute(query,[["alice123"]]);
     res.json(rows);
