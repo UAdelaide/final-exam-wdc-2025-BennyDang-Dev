@@ -43,7 +43,7 @@ router.get('/getOwnerDogs', async (req,res) => {
     // res.status(500).json({ error: 'Failed fetching dogs' });
     res.json(rows);
   }catch(error){
-    res.status(500).json({ error: 'Failed fetching dogs' });
+    res.status(500).json({ error: 'Failed fetching doggos!' });
   }
 });
 

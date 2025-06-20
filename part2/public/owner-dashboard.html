@@ -106,7 +106,7 @@
 
             // * If result is not ok (200) then we throw error
             if(!res.ok){
-              throw new Error(result.error);
+              throw new Error(result.error || 'Error fetching dogs!');
             }
             dogObj.value = result;
 
