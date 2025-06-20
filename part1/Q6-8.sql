@@ -49,4 +49,5 @@ INNER JOIN Users U ON WRT.walker_id = U.user_id
 INNER JOIN WalkRequests WR ON WRT.request_id = WR.request_id
 GROUP BY WRT.walker_id;
 
-FROM
+FROM WalkRequests WR
+WHERE WR.status = 'completed'
