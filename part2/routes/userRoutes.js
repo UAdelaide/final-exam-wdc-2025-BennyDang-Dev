@@ -27,7 +27,8 @@ router.post('/login', async (req, res) => {
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
-    
+
+    req.session.
 
     const rowObj = rows[0];
     if(rowObj.role === 'owner'){
