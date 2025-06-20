@@ -126,7 +126,7 @@
             res = await fetch('/api/users/getOwnerIDs', {
               method: 'POST',
               headers: {'Content-Type': 'application/json'},
-              body: JSON.stringify({ usernames:userSET })
+              body: JSON.stringify({ usernames: Array.from(userSET) })
             });
             result = await res.json();
             if(!res.ok) throw new Error(result.error || 'Error get user ids!');
