@@ -152,7 +152,7 @@ let db;
 
         // * Insert records into WalkRatings table if table is empty
         // * Will Hard Code Request ID + Owner ID from WalkRequests that has been completed
-        [rows] = await db.execute(`SELECT COUNT(*) AS count FROM WalkRatings`);
+        [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Applications`);
         if(rows[0].count === 0){
             await db.execute(`
                 INSERT INTO WalkApplications ( request_id, walker_id, status ) VALUES
@@ -171,16 +171,12 @@ let db;
          [rows] = await db.execute(`SELECT COUNT(*) AS count FROM WalkRatings`);
         if(rows[0].count === 0){
             await db.execute(`
-                INSERT INTO WalkApplications ( request_id, walker_id, status ) VALUES
-                    ( 1, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'rejected'),
-                    ( 2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
-                    ( 3, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
-                    ( 4, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
-                    ( 5, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
-                    ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
-                    ( 7, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'accepted'),
-                    ( 8, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'pending'),
-                    ( 9, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 'pending');
+                INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments ) VALUES
+                    ( 2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 1 , 5 , 'some comments'),
+                    ( 3, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 3 , 4 , 'some comments'),
+                    ( 4, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 4 , 3 , ''),
+                    ( 5, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 4 , 5 , ''),
+                    ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 1 , 5 , '');
             `);
         }
 
