@@ -44,5 +44,5 @@ INNER JOIN Users U ON D.owner_id = U.user_id;
 
 SELECT * FROM
 Users
-LEFT JOIN 
+LEFT JOIN WalkRatings WR ON 
 WHERE Users.role = 'walker'
