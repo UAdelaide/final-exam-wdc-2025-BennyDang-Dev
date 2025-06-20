@@ -38,6 +38,7 @@ app.get("/owner-dashboard.html",(req,res, next) => {
     }
 });
 
+// * If they access index.html then 
 app.get("/index.html",(req,res, next) => {
     const { authenticated, role } = req.session;
     if(authenticated){
