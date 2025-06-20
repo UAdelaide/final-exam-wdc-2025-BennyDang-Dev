@@ -102,13 +102,15 @@ router.post('/getOwnerIDs', async (req,res) => {
         return;
       }
       connection.query(query,usernames,function(err2,rows,fields){
+        connection.release();
         if(err2){
           return;
         }
+        
       });
-    })
-    const [rows] = await db.execute(query,[["alice123"]]);
-    res.json(rows);
+    });
+    // const [rows] = await db.execute(query,[["alice123"]]);
+    // res.json(rows);
   }catch(error){
     res.status(500).json({ error: 'Can\' get user ids!' });
     console.log(error);
