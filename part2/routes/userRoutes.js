@@ -90,7 +90,8 @@ router.get('/me', (req, res) => {
 // * Get owner ids for index.html dog tables
 router.post('/getOwnerIDs', async (req,res) => {
   // * Is array
-  const { usernames } = req.body;
+  // const { usernames } = req.body;
+  
   const query = `
     SELECT JSON_OBJECTAGG(U.username,U.user_id) AS userIDs
     FROM Users U
