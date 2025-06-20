@@ -44,14 +44,15 @@
       },
       methods: {
         LogIn() {
-          const compo
+          // * Saving parent vue pointer
+          const component = this;
           const xhttp = new XMLHttpRequest();
           xhttp.setRequestHeader('Content-type','application/json');
           // * Handling errors as correct credential would redirect the user
           // * To their dashboard
           xhttp.onreadystatechange = function() {
             if(this.readyState === 4 && this.status === 401){
-
+              component.invalid = true;
             }
           }
           xhttp.open('POST','/login',true);
