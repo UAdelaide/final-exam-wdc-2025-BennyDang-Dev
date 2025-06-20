@@ -79,6 +79,8 @@ app.use(express.static(path.join(__dirname, 'public')));
             );
         `);
 
+        // * Create WalkApplication table if not exists
+        // ? Mostly for formali
         await db.execute(`
             CREATE TABLE WalkApplications (
                 application_id INT AUTO_INCREMENT PRIMARY KEY,
