@@ -1,3 +1,4 @@
+Use DogWalkService;
 
 INSERT INTO Users ( username, email, password_hash, role ) VALUES
     ( 'alice123', 'alice@example.com', 'hashed123', 'owner' ),
@@ -29,3 +30,5 @@ INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments ) VAL
     ( 4, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 4 , 3 , ''),
     ( 5, (SELECT user_id FROM Users WHERE username = 'bobwalker'), 4 , 5 , ''),
     ( 6, (SELECT user_id FROM Users WHERE username = 'zewalkerz'), 1 , 5 , '');
+
+-- * Some Test Querries
