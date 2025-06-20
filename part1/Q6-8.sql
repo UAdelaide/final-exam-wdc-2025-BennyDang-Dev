@@ -46,4 +46,4 @@ INNER JOIN Users U ON D.owner_id = U.user_id;
 SELECT U.username AS walker_username, COUNT(WR.rating_id), total_ratings, average_rating, completed_walks
 FROM WalkRatings WR
 INNER JOIN Users U ON WR.walker_id = U.user_id
-GROUP BY WR.rant
+GROUP BY WR.walker_id
