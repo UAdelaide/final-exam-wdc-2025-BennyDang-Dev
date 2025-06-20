@@ -64,7 +64,7 @@ INNER JOIN Users U ON WRT.walker_id = U.user_id
 INNER JOIN WalkRequests WR ON WRT.request_id = WR.request_id
 GROUP BY WRT.walker_id;
 
-SELECT WA.walker_id, COUNT(WA.walker_id) AS completed_walks
+SELECT *
 FROM WalkApplications WA
 INNER JOIN WalkRequests WR ON WA.request_id = WR.request_id
 RIGHT JOIN WalkRatings WRT ON WA.walker_id = WRT.walker_id
