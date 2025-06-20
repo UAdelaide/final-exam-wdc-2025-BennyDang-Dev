@@ -102,7 +102,7 @@ let db;
 
         // ------------------------------------------
         // ! Inserting Records
-        // ? Some of these querries can be found in the Q5.sql file
+        // ? These querries can be found Q6-8.sql
         // ------------------------------------------
         let rows = [];
 
@@ -170,8 +170,9 @@ let db;
 
 // * Routes
 
+
 app.get('/api/dogs', async(req,res) => {
-    
+
 });
 
 app.use('/', indexRouter);
