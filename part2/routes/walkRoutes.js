@@ -19,7 +19,11 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/ownerRequests')
+router.get('/ownerRequests', async (req, res) => {
+  try{
+    const [rows] = await db.query
+  }
+})
 
 // POST a new walk request (from owner)
 router.post('/', async (req, res) => {
