@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Dog Walking Service</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid red
+        }
+        .container > h1 {
+            justify-content: ;
+        }
+        .container > img {
+            align-items: right;
+        }
+    </style>
+
+</head>
+<body>
+    <main id="app">
+        <div class="container">
+            <h1>Dog of the day</h1>
+        </div>
+        <!-- ! html-validate don't recognise vue src binding attribute -->
+        <div><img :src="imageURL"/></div>
+
+
+    </main>
 
     <script>
         const app = Vue.createApp({
@@ -31,29 +56,5 @@
 
         }).mount('#app');
     </script>
-    <style>
-        .container {
-            display: flex;
-            flex-direction: column;
-            border: 1px solid red
-        }
-        .container > h1 {
-            align-items: left;
-        }
-        .container > img {
-            align-items: right;
-        }
-    </style>
-
-</head>
-<body>
-    <main id="app">
-        <div class="container">
-            <h1>Dog of the day</h1>
-        </div>
-        <!-- ! html-validate don't recognise vue src binding attribute -->
-        <div><img :src="imageURL"/></div>
-
-    </main>
 </body>
 </html>
