@@ -102,7 +102,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         // ------------------------------------------
         // ! Inserting Records
         // ? These querries can be found in the Q5.sql file
-        // ? Including the ones for WalkRatings that were not in Q5
+        // ? Including the ones for WalkRatings that were not required in Q5
         // ------------------------------------------
         let rows = [];
 
@@ -120,6 +120,18 @@ app.use(express.static(path.join(__dirname, 'public')));
         }
 
         [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Dogs`);
+        if(rows[0].count === 0){
+            await db.execute(`
+                INSERT INTO Dogs ( owner_id, name, size ) VALUES
+                    ( (SELECT user_id FROM Users WHERE Users.username = 'alice123' LIMIT 1), 'Max', 'medium' ),
+                    ( (SELECT user_id FROM Users WHERE Users.username = 'carol123' LIMIT 1), 'Bella', 'small' ),
+                    ( (SELECT user_id FROM Users WHERE Users.username = 'kinglouisXIV' LIMIT 1), 'Belfort', 'large' ),
+                    ( (SELECT user_id FROM Users WHERE Users.username = 'kinglouisXIV' LIMIT 1), 'Lupin', 'large' ),
+                    ( (SELECT user_id FROM Users WHERE Users.username = 'alice123' LIMIT 1), 'Fluke', 'large' );
+            `);
+        }
+
+        [rows] = await db.execute(`SELECT COUNT(*) AS count FROM WalkRequests`);
         if(rows[0].count === 0){
             await db.execute(`
                 INSERT INTO Dogs ( owner_id, name, size ) VALUES
