@@ -19,8 +19,8 @@ app.use(session({
     // have all sessions have a session attached to
     //them, even if we haven't initialised it
     saveUninitialized: true,
-    // session cookie only work in https
-    cookie: {secure: false}
+    // session cookie works i http
+    cookie: { secure: false }
 }));
 
 app.use('/api/walks', walkRoutes);
