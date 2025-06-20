@@ -25,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
             password: '',
             database: 'DogWalkService'
         });
+
+        // * Create Users table if not exists
         await db.execute(`
             CREATE TABLE IF NOT EXISTS Users (
                 user_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -32,8 +34,10 @@ app.use(express.static(path.join(__dirname, 'public')));
                 email VARCHAR(100) UNIQUE NOT NULL,
                 password_hash VARCHAR(255) NOT NULL,
                 role ENUM('owner', 'walker') NOT NULL,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);`
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+                `
         );
+
         const [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Users`);
         if(rows[0].count === 0){
             await db.execute
