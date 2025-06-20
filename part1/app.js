@@ -48,7 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
                 FOREIGN KEY (owner_id) REFERENCES Users(user_id));
         `);
 
-        // * Create WalkRequests Table if not exists
+        // * Create WalkRequests table if not exists
         await db.execute(`
             CREATE TABLE IF NOT EXISTS WalkRequests (
                 request_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -62,6 +62,7 @@ app.use(express.static(path.join(__dirname, 'public')));
             );
         `);
 
+        // * Create WalkRatings table if not exists
         await db.execute(`
             CREATE TABLE IF NOT EXISTS WalkRatings (
                 rating_id INT AUTO_INCREMENT PRIMARY KEY,
