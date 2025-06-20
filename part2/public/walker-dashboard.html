@@ -58,7 +58,6 @@
             if(!res.ok) throw new Error(result.error);
             user.value = result.userid;
           }catch(err){
-            throw e
             error.value = err.message;
           }
         }
