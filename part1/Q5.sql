@@ -1,3 +1,2 @@
 -- * Five users
-INSERT INTO Users VALUES
-    (  )
+INSERT INTO Users ( username, email, password_ha
