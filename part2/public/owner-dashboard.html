@@ -159,7 +159,7 @@
         // * Used to display the dog name while selecting will get the dog id
         fetchDogs() {
           const component = this;
-          xhttp.onreadystatechange = function {
+          xhttp.onreadystatechange = function() {
             if(this.readyState === 4 ){
               if(this.status === 200){
                 component.dogObj = JSON.parse(this.response);
