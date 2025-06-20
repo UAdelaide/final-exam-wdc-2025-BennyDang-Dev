@@ -198,7 +198,7 @@ app.get('/api/walkers/summary', async(req,res) => {
            WHERE role = 'walker';
         `);
     }catch(error){
-        res.send(500);
+        res.sendStatus(500).send(er);
     }
 
 });
