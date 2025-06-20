@@ -98,5 +98,5 @@ FROM
     GROUP BY U.username) AS SQ;
 
 SELECT JSON_ARRAYAGG(username) AS usernames
-FROM Users
+FROM Usersp
 WHERE role = 'walker';
