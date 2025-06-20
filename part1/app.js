@@ -170,7 +170,8 @@ let db;
 // * Testing querries can be found Q6-8.sql
 
 app.get('/api/walkers/summary', async(req,res) => {
-    const result =
+    const [rows] = await db.execute(``);
+    console.log(rows[0])
 });
 
 app.use('/', indexRouter);
