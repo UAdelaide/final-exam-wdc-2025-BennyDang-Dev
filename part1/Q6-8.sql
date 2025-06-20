@@ -44,5 +44,5 @@ INNER JOIN Users U ON D.owner_id = U.user_id;
 
 SELECT user_id
 FROM Users U
-INNER JOIN Walker 
+INNER JOIN WalkRatings
 WHERE U.role = 'walker'
