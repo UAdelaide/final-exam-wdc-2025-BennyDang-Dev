@@ -39,12 +39,12 @@ router.get('/getOwnerDogs', async (req,res) => {
   const { user_id } = req.session;
   const query = `SELECT name, dog_id FROM Dogs WHERE owner_id = ?`;
   try {
-    const [rows] = await db.execute(query);
+    const [rows] = await db.execute(query,user_id);
     res.json(rows);
   }catch(error){
-    res.status(500).json({error: 'Failed fecthing dogs' })
+    res.status(500).json({ error: 'Failed fecthing dogs' });
   }
-})
+});
 
 // POST an application to walk a dog (from walker)
 router.post('/:id/apply', async (req, res) => {
