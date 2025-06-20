@@ -213,6 +213,7 @@ app.get('/api/walkers/summary', async(req,res) => {
                 GROUP BY U.username) AS SQ;
         `);
         const completed_walks = rows[0].completed_walks;
+
         [rows] = await db.execute(`
             SELECT JSON_OBJECTAGG(SQ.username, JSON_OBJECT('total_ratings', SQ.total_ratings, 'average_rating', SQ.average_rating)) AS ratings
                 FROM
@@ -226,7 +227,7 @@ app.get('/api/walkers/summary', async(req,res) => {
         const resObj = {};
         for(let i=0; i<usernames.length; i++){
             let username = usernames[i];
-            if 
+            if completed_walks
         }
 
     }catch(error){
