@@ -44,7 +44,7 @@
                 this.getDogImage();
             },
             method: {
-                async getDogImage(){
+                async getDogImage() {
                     console.log(true);
                     const res = await fetch('https://dog.ceo/api/breeds/image/random');
                     const result = await res.json();
