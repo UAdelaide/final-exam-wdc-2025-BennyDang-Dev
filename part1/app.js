@@ -37,17 +37,6 @@ app.use(express.static(path.join(__dirname, 'public')));
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
 
         `);
-        // * Insert records into Users table if table if empty
-        const [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Users`);
-        if(rows[0].count === 0){
-            await db.execute(`
-                INSERT INTO Users ( username, email, password_hash, role ) VALUES
-                    ( 'alice123', 'alice@example.com', 'hashed123', 'owner' ),
-                    ( 'bobwalker', 'bob@example.com', 'hashed456', 'walker' ),
-                    ( 'carol123', 'carol@example.com', 'hashed789', 'owner '),
-                    ( 'kinglouisXIV', 'theking@example.com', 'hashed1214', 'owner' ),
-                    ( 'zewalkerz', 'zewalkerz@example.com', 'hashed1519', 'walker');
-            `);
 
         await db.execute(`
             CREATE TABLE IF NOT EXISTS Dogs (
@@ -99,6 +88,18 @@ app.use(express.static(path.join(__dirname, 'public')));
                 CONSTRAINT unique_application UNIQUE (request_id, walker_id)
             );
         `);
+
+        // * Insert records into Users table if table if empty
+        const [rows] = await db.execute(`SELECT COUNT(*) AS count FROM Users`);
+        if(rows[0].count === 0){
+            await db.execute(`
+                INSERT INTO Users ( username, email, password_hash, role ) VALUES
+                    ( 'alice123', 'alice@example.com', 'hashed123', 'owner' ),
+                    ( 'bobwalker', 'bob@example.com', 'hashed456', 'walker' ),
+                    ( 'carol123', 'carol@example.com', 'hashed789', 'owner '),
+                    ( 'kinglouisXIV', 'theking@example.com', 'hashed1214', 'owner' ),
+                    ( 'zewalkerz', 'zewalkerz@example.com', 'hashed1519', 'walker');
+            `);
 
 
         }
