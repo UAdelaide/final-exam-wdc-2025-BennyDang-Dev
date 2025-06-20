@@ -95,8 +95,7 @@ router.post('/getOwnerIDs', async (req,res) => {
   const query = `
     SELECT username, user_id
     FROM Users
-    WHERE username IN ( ? )
-    `;
+    WHERE username IN ( ? )`;
   try {
     const [rows] = await db.execute(query,[["alice123"]]);
     res.json(rows);
