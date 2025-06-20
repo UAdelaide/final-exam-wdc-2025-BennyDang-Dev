@@ -71,4 +71,4 @@ INNER JOIN Users U on WA.walker_id = U.user_id
 WHERE WA.status = 'accepted' AND WR.status = 'completed'
 GROUP BY U.username;
 
-SELECT 
+SELECT COUNT(walker_id)
