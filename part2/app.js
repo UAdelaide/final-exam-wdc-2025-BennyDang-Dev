@@ -22,6 +22,7 @@ app.use(session({
     cookie: { secure: false }
 }));
 
+// * If accessing normally we just to redirect to index.html
 app.get('/',(req,res) => {
     res.redirect(301,"/index.html");
 });
