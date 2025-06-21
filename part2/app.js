@@ -23,8 +23,8 @@ app.use(session({
 }));
 
 app.get('/',(req,res) => {
-    
-})
+    res.redirect(301,"/index.html");
+});
 
 // * Checking if they have permission
 app.get("/owner-dashboard.html",(req,res, next) => {
