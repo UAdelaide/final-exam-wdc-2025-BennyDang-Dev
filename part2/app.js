@@ -22,6 +22,10 @@ app.use(session({
     cookie: { secure: false }
 }));
 
+app.get('/',(req,res) => {
+    
+})
+
 // * Checking if they have permission
 app.get("/owner-dashboard.html",(req,res, next) => {
     const { authenticated, role } = req.session;
