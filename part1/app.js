@@ -181,7 +181,7 @@ let db;
 
     }catch(error){
         process.stdout.write(`A problem occurred when setting up DB for testing!\n\nCheck that DogWalkService Database Exists!\n\n`);
-        console.error(error);
+        // console.error(error);
     }
 })();
 
